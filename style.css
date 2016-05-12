@@ -1,0 +1,134 @@
+body {
+	color:#555;
+	background:#fff;
+	font-family:sans-serif,verdana,arial,helvetica;
+	font-weight:bold;
+	font-size:11px;
+	text-align:left;
+}
+
+
+
+div.main {
+	width:800px;
+	position:absolute;
+	top:75px;
+}
+
+div.mainpages {
+        width:800px;
+        position:absolute;
+        top:25px;
+}
+
+div.left {
+	float:left;
+	color:#111;
+	font:13px sans-serif,vernada,arial;
+	width:450px;
+	margin-left:50px;
+}
+
+div.leftpages {
+        float:left;
+        color:#111;
+        font:13px sans-serif,vernada,arial;
+        font-weight:normal;
+        width:500px;
+        margin-left:25px;
+}
+
+div.right {
+	float:right;
+	width:250px;
+	margin-top:50px;
+}
+
+div.rightpages {
+        float:right;
+        width:250px;
+        margin-top:100px;
+}
+
+
+
+
+span.main_header {
+	color:#222;
+	font-family:monospace;
+	font-size:44px;
+}
+
+span.pagetitle {
+        color:#559;
+        font-size:32px;
+}
+
+span.black {
+	color:#222;
+}
+
+span.blue {
+	color:#559;
+}
+
+span.red {
+	color:#f33;
+}
+
+
+
+p.description {
+	margin-top:35px;
+	margin-bottom:35px;
+}
+
+
+
+table.filelist {
+        background:#fff;
+        border-style:solid;
+        border-width:1px;
+        border-color:#000;
+        margin-bottom:24px;
+        border-collapse:collapse;
+}
+
+th.gray {
+        color:#000;
+        background:#ccc;
+        font-weight:normal;
+}
+
+td.frame {
+        border-style:solid;
+        border-width:1px;
+        border-color:#000;
+}
+
+td.frameleft {
+        border-style:solid;
+        border-width:1px;
+        border-right-width:0px;
+        border-color:#000;
+        padding-right:15px;
+}
+
+td.frameright {
+        border-style:solid;
+        border-width:1px;
+        border-left-width:0px;
+        border-color:#000;
+}
+
+
+
+a:link, a:visited {
+	color:#777;
+	text-decoration:none;
+}
+
+a:hover, a:active, a:focus {
+	color:#333;
+	text-decoration:underline;
+}

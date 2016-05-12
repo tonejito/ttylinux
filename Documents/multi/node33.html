@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>4.6 Using an Ethernet Network</title>
+<meta name="description" content="4.6 using an ethernet Network">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node34.html">
+<link rel="previous" href="node32.html">
+<link rel="up" href="node27.html">
+<link rel="next" href="node34.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html444"
+  href="node34.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html442"
+  href="node27.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html436"
+  href="node32.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html445"
+  href="node34.html">4.7 Using the Firewall</a>
+<b> Up:</b> <a name="tex2html443"
+  href="node27.html">4 System Guide</a>
+<b> Previous:</b> <a name="tex2html437"
+  href="node32.html">4.5 Using Dropbear for</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h2><a name="SECTION00056000000000000000">
+<span class="arabic">4</span>.<span class="arabic">6</span> Using an Ethernet Network</a>
+</h2>
+
+<p>
+ttylinux is ready to use Ethernet networking. DHCP will be used when starting
+up the Ethernet network, unless configured otherwise.
+
+<p>
+The Ethernet network interface configuration is specified in the text file:
+<pre>
+	/etc/sysconfig/network-scripts/ifcfg-eth0
+</pre>
+
+<p>
+This file has specification in the form of "ITEM=value". Edit this file to set
+the proper Ethernet interface IP addresses, change the Ethernet DHCP usage and
+to enable Ethernet networking. To enable Ethernet networking, the line
+<tt>ENABLE=no</tt> must be changed to <tt>ENABLE=yes</tt>. To disable DHCP, the line
+<tt>DHCP=yes</tt> must be changed to <tt>DHCP=no</tt>.
+
+<p>
+After configuring the Ethernet network interface, restart the networking
+subsystem with the following command.
+
+<p>
+<pre>
+	service network restart
+</pre>
+
+<p>
+See the description of the <tt>/sbin/sysconfig</tt> script in section
+<a href="node40.html#sysconfig">4.11</a> for scripted help in setting up the Ethernet network interface
+configuration.
+
+<p>
+The Ethernet network interface, commonly referred to as eth0, can be started
+and stopped independently from the entire network subsystem with the following
+commands.
+
+<p>
+Startup eth0 with:
+<pre>
+	ifup eth0
+</pre>
+
+<p>
+Shutdown eth0 with:
+<pre>
+	ifdown eth0
+</pre>
+
+<p>
+<b>Help! I can use only IP addresses and not domain names.</b>
+<br><b>/etc/resolv.conf</b>
+
+<p>
+If you use only static IP addresses and no DHCP, as specified in your 
+/etc/sysconfig/network-scripts/ifcfg-eth* files, then you probably have no
+<tt>/etc/resolv.conf</tt> file and no domain name resolution. In this case only
+IP addresses will work, such as "ping 212.123.44.77", and domain names will
+<b>NOT</b> work, such as "ping sun.com".
+
+<p>
+In this case, make your own <tt>/etc/resolv.conf</tt> file with these contents:
+<pre>
+# OpenDNS Servers
+nameserver 208.67.222.222
+nameserver 208.67.220.220
+</pre>
+
+<p>
+The following bash commands will do this for you:
+<pre>
+	rm -f /etc/resolv.conf
+	&gt;/etc/resolv.conf
+	echo "# OpenDNS Servers"         &gt;&gt;/etc/resolv.conf
+	echo "nameserver 208.67.222.222" &gt;&gt;/etc/resolv.conf
+	echo "nameserver 208.67.220.220" &gt;&gt;/etc/resolv.conf
+</pre>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html444"
+  href="node34.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html442"
+  href="node27.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html436"
+  href="node32.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html445"
+  href="node34.html">4.7 Using the Firewall</a>
+<b> Up:</b> <a name="tex2html443"
+  href="node27.html">4 System Guide</a>
+<b> Previous:</b> <a name="tex2html437"
+  href="node32.html">4.5 Using Dropbear for</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

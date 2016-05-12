@@ -1,0 +1,21 @@
+Current  Maintainer: (2008-    ) Douglas Jerome <douglas@ttylinux.org>
+
+
+Version 16.1, Mon May 27 09:10:10 MST 2013
+ - distribution named "bricolage"
+ - removed retawq-0.2.6c
+ - added dtach-0.8, dvtm-0.9, haserl-0.9.29, lynx-2.8.7, nano-2.2.6
+ - updated bash-4.2 patch level from 39 to 45
+ - updated from alsa-lib-1.0.25 to alsa-lib-1.0.27
+ - updated from alsa-utils-1.0.25 to alsa-utils-1.0.27
+ - updated from busybox-1.20.2 to busybox-1.21.0
+ - updated from dropbear-2012.55 to dropbear-2013.58
+ - updated from e2fsprogs-1.42.6 to e2fsprogs-1.42.7
+ - updated from iptables-1.4.17 to iptables-1.4.18
+ - updated from kmod-12 to kmod-13
+ - updated from lua-5.2.1 to lua-5.2.2
+ - updated from ntfs-3g_ntfsprogs-2012.1.15 to ntfs-3g_ntfsprogs-2013.1.13
+ - updated from util-linux-2.22 to util-linux-2.23
+
+Version 16.0, Sun May  5 15:13:13 MST 2013
+  - initial release

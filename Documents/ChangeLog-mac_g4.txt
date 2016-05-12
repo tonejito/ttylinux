@@ -1,0 +1,168 @@
+Current  Maintainer: (2008-    ) Douglas Jerome <douglas@ttylinux.org>
+
+
+Version 16.1, Mon May 27 09:10:10 MST 2013
+ - distribution named "bricolage"
+ - removed retawq-0.2.6c
+ - added dtach-0.8, dvtm-0.9, haserl-0.9.29, lynx-2.8.7, nano-2.2.6
+ - updated bash-4.2 patch level from 39 to 45
+ - updated from alsa-lib-1.0.25 to alsa-lib-1.0.27
+ - updated from alsa-utils-1.0.25 to alsa-utils-1.0.27
+ - updated from busybox-1.20.2 to busybox-1.21.0
+ - updated from dropbear-2012.55 to dropbear-2013.58
+ - updated from e2fsprogs-1.42.6 to e2fsprogs-1.42.7
+ - updated from iptables-1.4.17 to iptables-1.4.18
+ - updated from kmod-12 to kmod-13
+ - updated from lua-5.2.1 to lua-5.2.2
+ - updated from util-linux-2.22 to util-linux-2.23
+
+Version 16.0, Tue Apr  2 22:54:40 MST 2013
+ - distribution named "ocelot"
+ - added haserl-0.9.29
+ - added mpc-1.0.1, for gcc
+ - updated from binutils-2.22 to binutils-2.23
+ - updated from busybox-1.19.4 to busybox-1.20.2
+ - updated from dropbear-0.53.1 to dropbear-2012.55
+ - updated from e2fsprogs-1.42.2 to e2fsprogs-1.42.6
+ - updated from gcc-4.4.6 to gcc-4.6.3
+ - updated from glibc-2.14 to glibc-2.16.0
+ - updated from gmp-4.3.2 to gmp-5.0.5
+ - updated from iptables-1.4.13 to iptables-1.4.17
+ - updated from kmod-7 to kmod-12
+ - updated from lua-5.2.0 to lua-5.2.1
+ - updated from mpfr-2.4.2 to mpfr-3.1.1
+ - updated from util-linux-2.21 to util-linux-2.22
+ - (bash) updated from patch level 24 to patch level 39
+
+Version 14.1, Sun May 13 18:59:49 MST 2012
+ - distribution named "boomslang"
+ - updated from e2fsprogs-1.42.1 to e2fsprogs-1.42.2
+ - updated from iptables-1.4.12.2 to iptables-1.4.13
+ - updated from ncurses-5.7 to ncurses-5.9
+ - updated from kmod-6 to kmod-7
+ - added from readline-6.2
+ - added from lua-5.2.0
+
+Version 14.0, Sun Apr  8 21:25:50 MST 2012
+ - skipped version numbers -- how wierd is that
+ - distribution named "hawberk"
+ - updated bash-4.2 patchlevel to 24
+ - updated from e2fsprogs-1.41.12 to e2fsprogs-1.42.1
+ - updated from iptables-1.4.9.1 to iptables-1.4.12.2
+ - updated from gcc-4.4.4 to gcc-4.4.6
+ - updated from glibc-2.13 to glibc-2.14
+ - updated from module-init-tools-3.16 to kmod-6
+ - updated from udev-163 to udev-182
+
+Version 10.0, Tue Feb 28 22:14:02 MST 2012
+ - switched to a grand unified version -- went backwards, how wierd is that
+ - distribution named "bazooka"
+ - merged ws-ttylinux, adding alsa-1.0.25, binutils-2.22, gcc-4.4.4, make-3.82
+
+Version 12.7, Sun Dec 25 11:56:03 MST 2011
+ - distribution named "buzzkill"
+ - updated from busybox-1.18.4 to busybox-1.19.3
+ - updated from dropbear-0.52 to dropbear-0.53.1
+ - updated from e2fsprogs-1.41.12 to e2fsprogs-1.42
+ - updated from glibc-2.12.1 to glibc-2.13
+ - updated from iptables-1.4.9.1 to iptables-1.4.12
+ - updated from module-init-tools-3.12 to module-init-tools-3.16
+
+Version 12.6, ddd Apr 19 hh:mm:ss MST 2011
+ - distribution named "maiko"
+ - updated from linux-2.6.34.6 to linux-2.6.38.1
+ - updated from busybox-1.18.1 to busybox-1.18.4
+
+Version 12.5, Sat Feb 26 20:44:34 MST 2011
+ - distribution named "boomer"
+ - (busybox) dhcp client adds OpenDNS nameservers if dhcp server doesn't
+ - (pacman) fixed for empty repo and --vers= srting
+
+Version 12.4, Sun Feb 20 12:30:40 MST 2011
+ - distribution named "zoomer"
+ - build system: major re-oranization
+ - build system: ISO now has all ttylinux packages, separate from initrd
+ - increased file system size to 24 MB
+ - PPC ISO boots in a Macintosh in the normal way
+ - fixed sound module loading for PPC Macintosh; sound is available once booted
+ - Linux kernel: added network devices
+ - Linux kernel: added PCMCIA and CardBus devices
+ - fixed udev rules for making /dev/{cdrom,cdrw,dvd,dvdrw} sym links
+ - reverted to busybox for mount and umount, mainly for NFS mounting
+ - updated from busybox-1.17.4 to busybox-1.18.1
+ - (bash) fixed job control; fg and bg commands now work
+ - (bash) dynamically linked to libncurses
+ - (busybox) added many programs
+ - (busybox) added "eject", mainly to eject CD-ROM from slot-loading Macintosh
+ - (gpm) switch from /dev/input/mouse0 to /dev/input/mice
+ - (iptables) added on/off FORWARD control
+ - (iptables) added /etc/sysconfig/firewall which has "FIREWALL=on"
+ - (ttylinux-installer) greatly reduced memory requirement for installation
+ - (ttylinux-installer) added lock-down capability in an installed system
+ - (ttylinux-installer) added target installation configuration file
+ - (udev) corrected and simplified udev rules -- thanks pablo <claws.wielder@gmail.com>
+
+Version 12.3, Sat Dec 25 20:18:31 MST 2010
+ - name changed from "meerkat" to "mana"
+ - added detail to the config/ directory organization
+ - changed the mechanism of using a specified kernel
+ - added prerun site-specific script callout to the make steps
+ - made easier use of cross-tools from a different location
+ - added support for serial port console and login for "console=<ttyS*>"
+ - added "login=<ttyS*>[,<ttyS*>]" boot parameter to put login on serial devs
+ - added "nologin=<tty*>[,<tty*>]" boot parameter remove login from virt console
+ - added "modules=<module>[,<module>]" to load specific kernel module(s)
+ - updated from busybox-1.17.3 to busybox-1.17.4
+ - (busybox) removed kernel module handling programs
+ - (busybox) removed mount, umount, losetup
+ - (busybox) switched from more to less, added pgrep, pkill, top
+ - (iptables) added "ping" in firewall configuration file /etc/firewall.conf
+ - (udev) corrected to load modules that have bus aliases e.g., for sound cards
+ - new package: (gpm-1.20.6)
+ - new package: (module-init-tools) added insmod, lsmod, modprobe, rmmod
+ - new package: (util-linux-ng) added mount, umount, losetup
+
+Version 12.2, Tue Nov 23 17:58:52 MST 2010
+ - name changed from "atheling" to "meerkat"
+ - changed "ttylinux.dist-config.sh" to "ttylinux-config.sh"
+ - added "make bcfg-stnd" and "make bcfg-suid" to make busybox config files.
+ - increased file system size fro 8 MB to 10 MB for ncurses libs, kernel modules
+ - split /dev from basefs for platform-specific /dev content
+ - added support for serial port console and login
+ - added support nfsroot
+ - added "nofireall" boot parameter
+ - enabled kernel modules
+ - added udev-163 to dynamically create /dev device nodes
+ - mount a /tmp partition if found in /etc/fstab at startup
+ - properly make /dev/root device node at startup
+ - updated from busybox-1.17.2 to busybox-1.17.3
+ - updated from ncurses-5.6 to ncurses-5.7
+ - (busybox) added locale support, more desktop compatibility
+ - (busybox) added mount by LABEL and UUID
+ - (ncurses) added ncurses libraries
+ - (iptables) added /etc/sysconfig/firewall
+
+Version 12.1, Sun Oct 17 18:02:17 MST 2010
+ - name changed from "backfire" to "atheling"
+ - fixed the setting of the initrd file system size
+ - added a package download to the makefile
+ - cross-tools: updated from gcc-4.3.4 to gcc-4.4.4
+ - Linux kernel: updated from 2.6.30.5 to 2.6.34.6
+ - updated from glibc-2.11 to glibc-2.12.1
+ - updated from bash-3.2.48 to bash-4.1
+ - updated from busybox-1.16.1 to busybox-1.17.2
+ - updated from e2fsprogs-1.41.10 to e2fsprogs-1.41.12
+ - updated from iptables-1.4.6 to iptables-1.4.9.1
+ - (e2fsprogs) added /sbin/tune2fs
+
+Version 11.2, Sat Jul 10 17:51:03 MST 2010
+ - name changed from "aardvark" to "backfire"
+ - fixed a makefile shell problem for some hosts
+ - fixed the ttylinux-flash script
+ - improved the pacman and ttylinux-installer scripts
+ - (busybox) removed rtcwake
+ - (bash) fixed a bash build problem for some hosts
+
+Version 11.1, Wed Apr 21 22:56:34 MST 2010
+ - distribution named "aardvark"
+ - initial powerpc release

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>3.4.1 Source CD-ROM Device</title>
+<meta name="description" content="3.4.1 source CD-ROM Device">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node22.html">
+<link rel="previous" href="node20.html">
+<link rel="up" href="node20.html">
+<link rel="next" href="node22.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html311"
+  href="node22.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html309"
+  href="node20.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html303"
+  href="node20.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html312"
+  href="node22.html">3.4.2 Target Partition Device</a>
+<b> Up:</b> <a name="tex2html310"
+  href="node20.html">3.4 Install from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html304"
+  href="node20.html">3.4 Install from CD-ROM</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h3><a name="SECTION00044100000000000000"></a>
+<a name="cdromdev"></a>
+<br>
+<span class="arabic">3</span>.<span class="arabic">4</span>.<span class="arabic">1</span> Source CD-ROM Device
+</h3>
+
+<p>
+The correct CD-ROM device name depends on whether the drive is an IDE or SATA
+device. If your system uses IDE, the following device names are possible:
+
+<p>
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="LEFT">Device Name</td>
+<td align="LEFT">Description</td>
+</tr>
+<tr><td align="LEFT">/dev/hda</td>
+<td align="LEFT">Master Device on First IDE Controller</td>
+</tr>
+<tr><td align="LEFT">/dev/hdb</td>
+<td align="LEFT">Slave Device on First IDE Controller</td>
+</tr>
+<tr><td align="LEFT">/dev/hdc</td>
+<td align="LEFT">Master Device on Second IDE Controller</td>
+</tr>
+<tr><td align="LEFT">/dev/hdd</td>
+<td align="LEFT">Slave Device on Second IDE Controller</td>
+</tr>
+</table>
+</div>
+
+<p>
+Among the above, /dev/hda is not likely to be your CD-ROM device unless you are
+using a modern laptop. A more likely possibility is /dev/hdc. /dev/hda normally
+is the device name of your hard disk, but a modern computer will use SATA for
+the hard drive and many of those have IDE CD-ROM drive.
+
+<p>
+If your system uses SATA (Serial ATA), use this table:
+
+<p>
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="LEFT">Device Name</td>
+<td align="LEFT">Description</td>
+</tr>
+<tr><td align="LEFT">/dev/scd0</td>
+<td align="LEFT">First SATA CD-ROM Device</td>
+</tr>
+<tr><td align="LEFT">/dev/scd1</td>
+<td align="LEFT">Second SATA CD-ROM Device</td>
+</tr>
+<tr><td align="LEFT">/dev/scd2</td>
+<td align="LEFT">Third SATA CD-ROM Device</td>
+</tr>
+<tr><td align="LEFT">/dev/scd3</td>
+<td align="LEFT">Fourth SATA CD-ROM Device</td>
+</tr>
+</table>
+</div>
+
+<p>
+Usually the SATA CD-ROM device will be /dev/scd0.
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html311"
+  href="node22.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html309"
+  href="node20.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html303"
+  href="node20.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html312"
+  href="node22.html">3.4.2 Target Partition Device</a>
+<b> Up:</b> <a name="tex2html310"
+  href="node20.html">3.4 Install from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html304"
+  href="node20.html">3.4 Install from CD-ROM</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

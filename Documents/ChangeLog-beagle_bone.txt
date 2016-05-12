@@ -1,0 +1,60 @@
+Current  Maintainer: (2008-    ) Douglas Jerome <douglas@ttylinux.org>
+
+
+Version 2014.10, Sat Apr 26 13:51:59 MST 2014
+ - distribution named "athling"
+ - Boot Loader: update from u-boot-2012.10 to u-boot-2014.01
+ - Linux kernel: updated from 3.8.4 to 3.8.13
+ - added libs: cloog-0.16.1, gmp-5.0.5, mpc-1.0.1, mpfr-3.1.1, ppl-0.11, for gcc
+ - updated from busybox-1.21.0 to busybox-1.22.1
+ - updated from calc-2.12.4.4 to calc-2.12.4.13
+ - updated from dropbear-2013.58 to dropbear-2014.63
+ - updated from dvtm-0.9 to dvtm-0.11
+ - updated from e2fsprogs-1.42.7 to e2fsprogs-1.42.9
+ - updated from gcc-4.6.3 to gcc-4.7.3 (C, C99, C++)
+ - updated from glibc-2.16.0 to glibc-2.17.0
+ - updated from haserl-0.9.29 to haserl-0.9.32
+ - updated from kmod-13 to kmod-16
+ - updated from lua-5.2.2 to lua-5.2.3
+ - updated from lynx-2.8.7 to lynx-2.8.8
+ - updated from make-3.82 to make-4.0
+ - updated from nano-2.2.6 to nano-2.3.2
+ - updated from readline-6.2 to readline-6.3
+ - updated from util-linux-2.23 to util-linux-2.24
+
+Version 16.1, Mon May 27 09:10:10 MST 2013
+ - distribution named "bricolage"
+ - removed retawq-0.2.6c
+ - added dtach-0.8, dvtm-0.9, haserl-0.9.29, lynx-2.8.7, nano-2.2.6
+ - updated bash-4.2 patch level from 39 to 45
+ - updated from busybox-1.20.2 to busybox-1.21.0
+ - updated from dropbear-2012.55 to dropbear-2013.58
+ - updated from e2fsprogs-1.42.6 to e2fsprogs-1.42.7
+ - updated from iptables-1.4.17 to iptables-1.4.18
+ - updated from kmod-12 to kmod-13
+ - updated from lua-5.2.1 to lua-5.2.2
+ - updated from util-linux-2.22 to util-linux-2.23
+
+Version 16.0, Fri Mar 29 22:10:16 MST 2013
+ - distribution named "ocelot"
+ - increased file system size to 192 MB
+ - Boot Loader: updated from u-boot-2011.09 to u-boot-2012.10
+ - Linux kernel: updated from 3.2.9 to 3.8.4, with a large standard config
+ - added mpc-1.0.1, for gcc
+ - updated from binutils-2.22 to binutils-2.23
+ - updated from busybox-1.19.4 to busybox-1.20.2
+ - updated from dropbear-0.53.1 to dropbear-2012.55
+ - updated from e2fsprogs-1.42.2 to e2fsprogs-1.42.6
+ - updated from gcc-4.4.6 to gcc-4.6.3
+ - updated from glibc-2.14 to glibc-2.16.0
+ - updated from gmp-4.3.2 to gmp-5.0.5
+ - updated from iptables-1.4.13 to iptables-1.4.17
+ - updated from kmod-7 to kmod-12
+ - updated from lua-5.2.0 to lua-5.2.1
+ - updated from mpfr-2.4.2 to mpfr-3.1.1
+ - updated from util-linux-2.21 to util-linux-2.22
+ - (bash) updated from patch level 24 to patch level 39
+
+Version 14.1, Thu Apr 19 20:23:26 MST 2012
+ - distribution named "boomslang"
+ - initial armv7 release for BeagleBone

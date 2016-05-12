@@ -1,0 +1,43 @@
+# $RCSfile:$
+# $Revision:$
+# $Date:$
+
+
+# Version 9.10 Add-ons i486
+#
+V9.10 Download/calc-2.12.4.2-i486.tbz     525d0d6b43b6f8c82f8a31380d265dad
+V9.10 Download/ntfs-3g-2010.10.2-i486.tbz a72c0ca6cc664f63be12c783f3ba633c
+V9.10 Download/thttpd-2.25b-i486.tbz      ec8bf8fd84ef0b995d9bbecdc8bd1869
+
+
+# Version 12.6 Add-ons i486
+#
+V12.6 Download/calc-2.12.4.2-i486.tbz     525d0d6b43b6f8c82f8a31380d265dad
+V12.6 Download/ntfs-3g-2010.10.2-i486.tbz a72c0ca6cc664f63be12c783f3ba633c
+V12.6 Download/thttpd-2.25b-i486.tbz      ec8bf8fd84ef0b995d9bbecdc8bd1869
+V12.6 Download/vim-7.3-i486.tbz           1967450e8e8ed4be8cbbafaa6b59e458
+
+
+# Version 12.6 Add-ons i686
+#
+V12.6 Download/calc-2.12.4.2-i686.tbz     a3f10b8a151e6c16e7d5cc7f4256ceba
+V12.6 Download/ntfs-3g-2010.10.2-i686.tbz 8f696e8f2ad9bb5720ca4c3f40ab37ee
+V12.6 Download/thttpd-2.25b-i686.tbz      b351ef5d2e4c31e3ac670808d96a7cc5
+V12.6 Download/vim-7.3-i686.tbz           41d5b437dcc89ea95fa3d5d0f4254345
+
+
+# Version 12.6 Add-ons x86_64
+#
+V12.6 Download/calc-2.12.4.2-x86_64.tbz     c1b19b13048d63f1d8dda35dd901f4bf
+V12.6 Download/ntfs-3g-2010.10.2-x86_64.tbz ebf49cf1683f0f90e6a71f7d91883e9c
+V12.6 Download/thttpd-2.25b-x86_64.tbz      55e5605b858c14e033d1a24b5a0b4085
+V12.6 Download/vim-7.3-x86_64.tbz           d2b2be7962e9bb4aa30b3798b9419029
+
+
+# Version 12.6 Add-ons powerpc
+#
+V12.6 Download/calc-2.12.4.2-powerpc.tbz     1f8547f1a79bec0b8951a5bdd05867a5
+V12.6 Download/ntfs-3g-2010.10.2-powerpc.tbz cfc825703c82f89e46767e94ce9726cd
+V12.6 Download/thttpd-2.25b-powerpc.tbz      7a89fec7d6559dccde757bb3b20d66e3
+V12.6 Download/vim-7.3-powerpc.tbz           bb3901ac762c09aaa88976c121f9ac98
+

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>4.4 Shell Environment</title>
+<meta name="description" content="4.4 shell Environment">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node32.html">
+<link rel="previous" href="node30.html">
+<link rel="up" href="node27.html">
+<link rel="next" href="node32.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html424"
+  href="node32.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html422"
+  href="node27.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html416"
+  href="node30.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html425"
+  href="node32.html">4.5 Using Dropbear for</a>
+<b> Up:</b> <a name="tex2html423"
+  href="node27.html">4 System Guide</a>
+<b> Previous:</b> <a name="tex2html417"
+  href="node30.html">4.3 Bootup, Shutdown and</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h2><a name="SECTION00054000000000000000">
+<span class="arabic">4</span>.<span class="arabic">4</span> Shell Environment</a>
+</h2>
+
+<p>
+The default shell used by ttylinux is GNU bash. The shell environment of
+aliases and variables is in <tt>/etc/profile</tt>; view this file after login to
+become familiar with the default shell environment.
+
+<p>
+Upon login, the <tt>PATH</tt> environmental variable has the following paths in
+the order listed.
+
+<p>
+<pre>
+	/bin
+	/usr/bin
+	/sbin
+	/usr/sbin
+</pre>
+
+<p>
+Put additional, or overriding, shell environment in scripts in the
+<tt>/etc/profile.d</tt> directory; do not change <tt>/etc/profile</tt> in order to
+avoid losing changes when updating ttylinux.
+
+<p>
+<br><hr>
+
+</body>
+</html>

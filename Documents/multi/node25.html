@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>3.4.5 Manual Installation - Setup and Installation</title>
+<meta name="description" content="3.4.5 manual Installation - Setup and Installation">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node26.html">
+<link rel="previous" href="node24.html">
+<link rel="up" href="node20.html">
+<link rel="next" href="node26.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html351"
+  href="node26.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html349"
+  href="node20.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html343"
+  href="node24.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html352"
+  href="node26.html">3.4.6 Manual Installation -</a>
+<b> Up:</b> <a name="tex2html350"
+  href="node20.html">3.4 Install from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html344"
+  href="node24.html">3.4.4 Running the Installer</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h3><a name="SECTION00044500000000000000">
+<span class="arabic">3</span>.<span class="arabic">4</span>.<span class="arabic">5</span> Manual Installation - Setup and Installation</a>
+</h3>
+
+<p>
+This description uses <tt>LILO</tt> for boot loading; other boot loaders such as
+<tt>grub</tt> and maybe <tt>loadlin</tt> and <tt>syslinux</tt> will also work.
+
+<p>
+There are two files to take from the ttylinux CD-ROM image, either by burning
+the image to a blank CD-ROM disc and mounting it, or mounting the CR-ROM image
+via loop device. In the following commands, the ttylinux version 14.0 CD-ROM
+image file is named <tt>ttylinux-i486-14.0.iso.gz</tt>; decompress it and mount it
+via loop device with the following commands, substituting your actual CPU
+<tt>x86_64</tt> or <tt>i686</tt>, if needed.
+
+<p>
+<pre>
+	mkdir -p mnt/ttylinux
+	gunzip ttylinux-i486-14.0.iso.gz
+	mount -t iso9660 -o loop ttylinux-i486-14.0.iso mnt/ttylinux
+</pre>
+
+<p>
+The two files needed from the CD-ROM are the ttylinux root file system,
+<tt>boot/filesys.gz</tt>, and the Linux kernel, <tt>boot/vmlinuz</tt>. You
+can, of course, use a different Linux kernel, following the ttylinux custom
+kernel requirements described in section <a href="node7.html#customkernel">2.1.1</a>.
+
+<p>
+There are two ways to install ttylinux for booting, one is to have ttylinux
+boot with the root file system in RAM disk, the other is to have ttylinux boot
+with the root file system directly on the hard drive.
+
+<p>
+<b>Install a ttylinux to Boot Using RAM Disk</b>
+
+<p>
+Copy the ttylinux file system <tt>filesys.gz</tt> image and the desired Linux
+kernel into your boot files directory; probably, this directory is <tt>/boot</tt>.
+After copying the two files, unmount the loop device with the following command.
+
+<p>
+<pre>
+	umount -d mnt/ttylinux
+</pre>
+
+<p>
+These two files, the kernel and the file system image, can have names other
+than the file names from the ttylinux CD-ROM. For this example the file names
+are changed from the names on the CD-ROM: the compressed ttylinux file system
+image file is called <tt>ttylinux-filesys.gz</tt>, the Linux kernel is called
+<tt>ttylinux-vmlinuz</tt> and the boot dirctory is <tt>/boot</tt>. Add the following
+section to <tt>/etc/lilo.conf</tt>:
+
+<p>
+<pre>
+image = /boot/ttylinux-vmlinuz
+	label  = ttylinux
+	initrd = /boot/ttylinux-filesys.gz
+	root   = /dev/ram0
+	read-only
+</pre>
+
+<p>
+Run the <tt>LILO</tt> boot loader installer by typing <tt>/sbin/lilo</tt>. The next
+boot will have the option of selecting <tt>ttylinux</tt> at the <tt>LILO</tt> boot
+prompt.
+
+<p>
+<b>Install a ttylinux to Boot with File System on a Hard Drive</b>
+
+<p>
+A hard drive partition, or a flash drive partition, of at least 8 MB is needed
+to install ttylinux. For this example ttylinux is being installed on drive
+partition device /dev/hda8 and the kernel and file system files are available
+via the loop device instructions above. A loop device also is used to mount the
+ttylinux file system image file.
+
+<p>
+<pre>
+	cp mnt/ttylinux/boot/filesys.gz filesys.gz
+	gunzip filesys.gz
+	mkdir -p mnt/filesys
+	mkdir -p mnt/newroot
+	mount -t ext2 -o loop ./filesys mnt/filesys
+	mount -t ext2 /dev/hda8 mnt/newroot
+	cp -a mnt/filesys/* mnt/newroot
+	cp mnt/ttylinux/boot/vmlinuz mnt/newroot/boot/ttylinux-vmlinuz
+	umount -d mnt/ttylinux
+	umount -d mnt/filesys
+</pre>
+
+<p>
+The new ttylinux root file system is still mounted; it needs to be customized
+before booting. Configuration is described in the following section
+<a href="node26.html#configuration">3.4.6</a>; it includes a description of a <tt>LILO</tt> configuration
+for booting the new ttylinux installation. After configuration unmount
+mnt/newroot.
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html351"
+  href="node26.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html349"
+  href="node20.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html343"
+  href="node24.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html352"
+  href="node26.html">3.4.6 Manual Installation -</a>
+<b> Up:</b> <a name="tex2html350"
+  href="node20.html">3.4 Install from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html344"
+  href="node24.html">3.4.4 Running the Installer</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

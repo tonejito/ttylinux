@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>3.3.5 Configuring the System</title>
+<meta name="description" content="3.3.5 configuring the System">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="previous" href="node18.html">
+<link rel="up" href="node14.html">
+<link rel="next" href="node20.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html287"
+  href="node20.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html285"
+  href="node14.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html281"
+  href="node18.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html288"
+  href="node20.html">3.4 Install from CD-ROM</a>
+<b> Up:</b> <a name="tex2html286"
+  href="node14.html">3.3 Transfer from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html282"
+  href="node18.html">3.3.4 Manual Transfer</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h3><a name="SECTION00043500000000000000"></a>
+<a name="flashback"></a>
+<br>
+<span class="arabic">3</span>.<span class="arabic">3</span>.<span class="arabic">5</span> Configuring the System
+</h3>
+
+<p>
+This transfered ttylinux system is a RAM disk system. Its file system is a
+gzipped image on the boot drive; its directories and files are very
+inaccessible. When the system is running, changes made to files are not
+retained for the next boot. Customizing or configuring this system to your
+needs takes some specific support.
+
+<p>
+A ttylinux system properly transfered, such as by using the
+<tt>/sbin/ttylinux-flash</tt> script, has a special boot-time startup feature:
+when ttylinux boots it attempts to mount the USB/flash drive that is boots from
+and run a script on that drive. Since the script is in a boot drive directory,
+and not burried away in a compressed file system, it can be changed and
+maintained by you. You can change this script to perform ttylinux configuration
+for ttylinux to do when it boots.
+
+<p>
+The feature of mounting the booted drive and running a startup script on that
+drive provides the user with a persistent boot-time startup configuration that
+is retained from one boot to the next. This user-maintainable startup script on
+the boot drive is in the <tt>config/ttylinux</tt> directory; a default version of
+this script is put onto the boot drive when the <tt>/sbin/ttylinux-flash</tt>
+script is run. This startup script is a very convenient place to configure your
+particular network interface upon ttylinux startup.
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html287"
+  href="node20.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html285"
+  href="node14.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html281"
+  href="node18.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html288"
+  href="node20.html">3.4 Install from CD-ROM</a>
+<b> Up:</b> <a name="tex2html286"
+  href="node14.html">3.3 Transfer from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html282"
+  href="node18.html">3.3.4 Manual Transfer</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

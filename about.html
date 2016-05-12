@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $RCSfile: about.html,v $ -->
+<!-- $Revision: 1.10 $ -->
+<!-- $Date: 2013/06/11 03:49:11 $ -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="ttylinux"/>
+<meta name="keywords" content="linux embedded small tiny console"/>
+<title>ttylinux homepage</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+<div class="mainpages">
+
+<div class="leftpages">
+   <span class="pagetitle">about ttylinux and strategy</span><br/>
+   <img src="Images/bluedot.png" width="450" height="1">
+   <p class="description">
+
+   Pascal Schmidt created <tt><b>ttylinux</b></tt> in 2001. The distribution
+   was command-line only and specifically supported dial-up networking, PPP
+   and ISDN, via serial interfaces. This orientation towards hard-wire serial
+   interfaces lends itself to the "tty" part of the <tt><b>ttylinux</b></tt>
+   name. In 2008 Pascal began looking for a new project maintainer.
+
+   <br/><br/>
+
+   Douglas Jerome took over the project in November 2008 and broke the dial-up
+   networking; lacking hardware and access to dial-up networking, now the
+   project is waiting for someone to take on the testing tasks of
+   re-integrating the dial-up capabilities. No matter any moves away from the
+   hard-wire serial interface orientation, the name <tt><b>ttylinux</b></tt>
+   remains.
+
+   <br/><br/>
+
+   A interesting result of the project goal, to make one of the smallest
+   up-to-date Linux systems, is the <tt><b>ttylinux</b></tt> build system; it
+   is very flexible and the simplicity of (re)configuring its Linux kernel and
+   other packages makes it a very useful embedded or small Linux system
+   development tool. The various bootable <tt><b>ttylinux</b></tt>
+   architecture variants available for download are example distributions
+   created by the <tt><b>ttylinux</b></tt> build system.
+
+   <br/><br/>
+
+   See the download pages for descriptions of kernel and component packages and
+   versions.
+
+   <br/><br/><br/>
+
+   <b><font color="#559"><big>Strategy</big></font></b><br/><br/>
+
+   i486 <tt><b>ttylinux</b></tt> is the smallest "normal" Linux distribution.
+   That is all it has. If it grows too much <tt><b>ttylinux</b></tt> will lose
+   itself. The <tt><b>ttylinux</b></tt> build system; however, can make
+   smaller <em>and</em> larger distributions.
+
+   <br/><br/>
+
+   The strategy for <tt><b>ttylinux</b></tt> is to remain very small yet be
+   similar to larger Linux systems is put into effect by a few things that make
+   <tt><b>ttylinux</b></tt> <em>be</em> what <tt><b>ttylinux</b></tt> is. The
+   following are fundamental to <tt><b>ttylinux</b></tt>; without which it would
+   be some other project, regardless of name.
+
+   <br/><br/>
+
+   &sect; <b><big>bash</big></b><br/>
+   <tt><b>ttylinux</b></tt> is a very small system with few programming
+   resources, bash is a <em>very</em> capable scripting language that makes up
+   the difference.
+
+   <br/><br/>
+
+   &sect; <b><big>glibc</big></b><br/>
+   <tt><b>ttylinux</b></tt> can be small enough to use as an embedded system,
+   but it usually is glibc-based, not eglibc nor uClibc. This retains
+   capability similar to larger Linux distributions. And because
+   <tt><b>ttylinux</b></tt> is glibc-based, a careful person can copy
+   libraries and programs from other typical Linux distributions into a
+   <tt><b>ttylinux</b></tt> system.
+
+   <br/><br/>
+
+   &sect; <b><big>ramdisk</big></b><br/>
+   As distributed, <tt><b>ttylinux</b></tt> mounts a root file system on a RAM
+   disk, not an <em>initramfs</em>; the RAM disk root file system is a true
+   file system. Although it can be installed to run from a hard drive, and more
+   interestingly a USB memory stick, the distributed <tt><b>ttylinux</b></tt>
+   must be small enough to have the root file system quickly mounted on a RAM
+   disk as a true file system.
+
+   </p>
+</div> <!-- left stop -->
+
+<div class="rightpages">
+   <span class="black"><tt><b><i>help</i></b></tt></span><br/><br/>
+   <a style="color:#559" href="http://groups.google.com/group/ttylinux/"
+      title="groupe de nombre stupidement grand">ttylinux google group</a><br/>
+   <a style="color:#f33" href="help.html"
+      title="comment obtenir l'aide">how to get help</a><br/>
+   <br/><br/>
+   <span class="black"><tt><b><i>general information</i></b></tt></span><br/><br/>
+   <a href="index.html"          title="ici">Home</a><br/>
+   <a href="news.html"           title="nouvelles">News</a><br/>
+   <br/>
+   <a href="about.html"          title="au sujet de">About ttylinux</a><br/>
+   <a href="reqs.html"           title="conditions et dispositifs">Requirements and Features</a><br/>
+   <a href="credits.html"        title="crédits">Supporters, Users and Credits</a><br/>
+   <br/><br/>
+   <span class="black"><tt><b><i>miscellaneous downloads</i></b></tt></span><br/><br/>
+   <a href="docs.html"           title="documents">Documents</a><br/>
+   <a href="buildsys.html"       title="système de construction">Build System</a><br/>
+   <a href="addons.html"         title="adjonctions">Add-ons</a><br/>
+   <br/><br/>
+   <span class="black"><tt><b><i>ttylinux distributions</i></b></tt></span><br/><br/>
+   <a href="dloadBBN.html"       title="téléchargements BeagleBone">BeagleBone</a><br/>
+   <a href="dloadWRT.html"       title="téléchargements WRTU54G-TM">WRTU54G-TM</a><br/>
+   <a href="dloadMac.html"       title="téléchargements MAC">Macintosh G4</a><br/>
+   <a href="dloadPC-i486.html"   title="téléchargements PC-i486">PC i486</a><br/>
+   <a href="dloadPC-i686.html"   title="téléchargements PC-i686">PC i686</a><br/>
+   <a href="dloadPC-x86_64.html" title="téléchargements PC-x86_64">PC x86_64</a><br/>
+   <a href="dloadV-i486.html"    title="téléchargements Virtio-i486">Virtio i486</a><br/>
+   <a href="dloadV-i686.html"    title="téléchargements Virtio-i686">Virtio i686</a><br/>
+   <a href="dloadV-x86_64.html"  title="téléchargements Virtio-x86_64">Virtio x86_64</a><br/>
+</div> <!-- right stop -->
+
+</div> <!-- main stop -->
+
+</body>
+
+</html>
+

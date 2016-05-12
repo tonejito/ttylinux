@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>2.1.1 Custom Kernel Requirements</title>
+<meta name="description" content="2.1.1 custom Kernel Requirements">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="previous" href="node6.html">
+<link rel="up" href="node6.html">
+<link rel="next" href="node8.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html151"
+  href="node8.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html149"
+  href="node6.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html145"
+  href="node6.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html152"
+  href="node8.html">2.2 File Downloads</a>
+<b> Up:</b> <a name="tex2html150"
+  href="node6.html">2.1 System Requirements</a>
+<b> Previous:</b> <a name="tex2html146"
+  href="node6.html">2.1 System Requirements</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h3><a name="SECTION00031100000000000000"></a>
+<a name="customkernel"></a>
+<br>
+<span class="arabic">2</span>.<span class="arabic">1</span>.<span class="arabic">1</span> Custom Kernel Requirements
+</h3>
+
+<p>
+The ttylinux root file system is an 8 MB ext2 file system; the file system
+image is compressed and resides in the CD-ROM image. After burning the CD-ROM
+image to a blank CD-ROM disc, or mounting the CD-ROM image via loop device,
+you can find the compressed root file system; it is <tt>boot/filesys.gz</tt>.
+This root file system can be used with a custom kernel that you make.
+
+<p>
+pc_i486, pc_i686, and pc_x86_64 ttylinux are built with
+<b>Linux 2.6.34.6</b> header files.  Linux kernels are not backwards compatible;
+software using the capabilities of a given kernel version cannot be
+<i>expected</i> to work with any previous kernel version. Using a kernel older
+than the kernel with which ttylinux was built cannot be supported in any way.
+With that described, with the small number of packages in the ttylinux system,
+ttylinux works to some extent with any Linux kernel from 2.6.0 upwards.
+
+<p>
+Your custom kernel needs to support all the hardware you want to use, plus some
+additional requirements for ttylinux itself.
+
+<p>
+A kernel used for running ttylinux needs to have <b>ramdisk</b> support, <b>initial ramdisk</b> support, and a default ramdisk size of at least <b>8192</b>.
+Note the kernel configuration has a default ramdisk size of 4096, which is not
+big enough.
+
+<p>
+If you want to use the basic firewall script of ttylinux, your kernel also
+needs iptables support with the <b>netlink</b> interface.
+
+<p>
+A ttylinux kernel needs to support <b>ext2 file systems</b>.
+
+<p>
+If you want to add a telnet server to ttylinux, your kernel will need to have
+<b>Unix98 pseudo terminal</b> support and support for the <b>devpts</b> file
+system.
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html151"
+  href="node8.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html149"
+  href="node6.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html145"
+  href="node6.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html152"
+  href="node8.html">2.2 File Downloads</a>
+<b> Up:</b> <a name="tex2html150"
+  href="node6.html">2.1 System Requirements</a>
+<b> Previous:</b> <a name="tex2html146"
+  href="node6.html">2.1 System Requirements</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

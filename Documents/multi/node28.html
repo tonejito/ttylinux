@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>4.1 Boot Parameters</title>
+<meta name="description" content="4.1 boot Parameters">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node29.html">
+<link rel="previous" href="node27.html">
+<link rel="up" href="node27.html">
+<link rel="next" href="node29.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html394"
+  href="node29.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html392"
+  href="node27.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html386"
+  href="node27.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html395"
+  href="node29.html">4.2 Basic Features</a>
+<b> Up:</b> <a name="tex2html393"
+  href="node27.html">4 System Guide</a>
+<b> Previous:</b> <a name="tex2html387"
+  href="node27.html">4 System Guide</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h2><a name="SECTION00051000000000000000"></a>
+<a name="bootparms"></a>
+<br>
+<span class="arabic">4</span>.<span class="arabic">1</span> Boot Parameters
+</h2>
+
+<p>
+Boot parameters are typed as a command line in the boot loader, before the
+Linux kernel is loaded. You will see these options when you boot the ttylinux
+CD-ROM. The <tt>vga=&lt;mode&gt;</tt> and <tt>modules=&lt;module&gt;[,&lt;module&gt;]</tt> boot
+parameters are not used by <b>i486</b> ttylinux.
+
+<p>
+<pre>
+console=&lt;ttyS*&gt; ........... Use serial dev &lt;ttyS*&gt; for console login. The
+                            kernel will use it for console output and ttylinux
+                            will also put a getty login on it.
+                            For &lt;ttyS*&gt; use one of ttyS0, ttyS1, ttyS2 or ttyS3.
+
+vga=&lt;mode&gt; ................ Use VESA frame buffer with &lt;mode&gt;.  Try vga=ask
+                            to get a list of modes support by the kernel.
+                          vga=0x301 640x480   8-bit | vga=0x161 1152x864   8-bit
+                          vga=0x311 640x480  16-bit | vga=0x163 1152x864  16-bit
+                          vga=0x303 800x600   8-bit | vga=0x307 1280x1024  8-bit
+                          vga=0x313 800x600  16-bit | vga=0x31A 1280x1024 16-bit
+                          vga=0x305 1024x768  8-bit | vga=0x31C 1600x1200  8-bit
+                          vga=0x317 1024x768 16-bit | vga=0x31E 1600x1200 16-bit
+
+quiet ..................... Don't print a bunch of stuff while booting, but do
+                            show anomalies and errors.
+
+enet ...................... Startup networking for Ethernet interfaces found by
+                            the kernel. DHCP is used. Any started interface will
+                            be eth0, eth1, eth2 or eth3.
+
+nofsck .................... Do not run fsck on any file systems.
+
+nosshd .................... Do not start sshd or make ssh keys; recommended for
+                            any CPU slower than 1 Ghz. A script that makes the
+                            ssh keys will be left in the /root directory.
+
+modules=&lt;module&gt;[,&lt;module&gt;] ... Load specific kernel module(s) named &lt;module&gt;.
+                                Use this to load your sound card module, or
+                                secure digital module (sdhci_pci if on
+                                the PCI bus), etc.
+
+hwclock=(local|utc) ....... The hardware (CMOS) clock keeps local or UCT time.
+
+tz=&lt;timezone&gt; ............. Set timezone to &lt;timezone&gt; by setting the TZ
+                            environment variable. Example: tz=GMT-8  See the
+                            following URL for a complete description of TZ.
+         http://www.gnu.org/s/libc/manual/html_node/TZ-Variable.html#TZ-Variable
+
+host=&lt;name.domain.tld&gt; .... Set the hostname to &lt;name.domain.tld&gt;, which by
+                            this example is a Fully Qualified Domain Name. You
+                            can use a simple &lt;name&gt;.
+
+login=&lt;tty*,tty*,...&gt; ..... Allow login on devices e.g., ttyS1, etc. Embedded
+                            system might use this to put a getty login(s) on a
+                            serial port(s).
+
+nologin=&lt;tty*,tty*,...&gt; ... Disallow login on devices e.g., tty1, tty2, etc.
+                            Embedded system might use this to prevent a getty
+                            login(s) on a virtual console(s).
+</pre>
+
+<p>
+If you've installed ttylinux and are using lilo, or some other boot loader,
+ttylinux will still use these boot options even if the boot loader does not
+show them.
+
+<p>
+<br><hr>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>4.10 Package Management</title>
+<meta name="description" content="4.10 package Management">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node40.html">
+<link rel="previous" href="node36.html">
+<link rel="up" href="node27.html">
+<link rel="next" href="node38.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html484"
+  href="node38.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html482"
+  href="node27.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html476"
+  href="node36.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html485"
+  href="node38.html">4.10.1 Using pacman with</a>
+<b> Up:</b> <a name="tex2html483"
+  href="node27.html">4 System Guide</a>
+<b> Previous:</b> <a name="tex2html477"
+  href="node36.html">4.9 Using Dialup</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h2><a name="SECTION000510000000000000000"></a>
+<a name="pacmanger"></a>
+<br>
+<span class="arabic">4</span>.<span class="arabic">10</span> Package Management
+</h2>
+
+<p>
+Package management is handled by <tt>pacman</tt>; it is invoked from the shell
+by typing its name, <tt>pacman</tt>. Use <tt>pacman</tt> to install and remove
+packages, and to query the local database of installed packages and files. When
+the network is up <tt>pacman</tt> can query, download and install packages from
+appropriate repositories. <tt>http://ttylinux.net/</tt> currently is the only
+known ttylinux package repository. <tt>pacman</tt> also can make ttylinux
+packages, which may be handy as <tt>pacman</tt> is a bash script that can run on
+any Linux system.
+
+<p>
+ttylinux packages are <tt>tar</tt> archives compressed with <tt>bzip2</tt>. All the
+packages that come with the ttylinux distribution are available in the CD-ROM
+ISO image; this is for reinstalling any packages that may have been removed
+from a ttylinux system.
+
+<p>
+A list of hostnames to be used as ttylinux repositories may be kept in file
+<tt>/etc/ttylinux-repo</tt>; however this file does not need to exist. A package
+repository hostname can be given to any pacman command that accesses a ttylinux
+package repository, and <tt>ttylinux.net</tt> is allways the default if no package
+repository is given. If <tt>/etc/ttylinux-repo</tt> exists and has hostnames in
+it, <tt>ttylinux.net</tt> will be search first if no package repository is given
+on the pacman command line. You are not likely to use the
+<tt>/etc/ttylinux-repo</tt> file, nor the repo option in general, as there
+currently is no known ttylinux package repository.
+
+<p>
+<tt>pacman</tt> uses directory <tt>/usr/share/ttylinux</tt> as a database location.
+In this directory, ttylinux has one file per installed package; each file
+lists of all the file pathnames that belong that package. <tt>pacman</tt> makes
+and removes these package database files as needed. Also in the
+<tt>/usr/share/ttylinux</tt> directory will be similar repository cache files, one
+each for each ttylinux repository that <tt>pacman</tt> uses.
+
+<p>
+<b>Pacman Usage</b>
+<br>
+Some of the information from "pacman -help":
+<pre>
+Usage: pacman [option ...] operation name [name ...]
+
+Options:
+  --repo=&lt;name&gt;  refer to a particular external repository
+  --vers=&lt;num&gt;   download for ttylinux version V&lt;num&gt;
+  -v|--verbose   verbose operation
+
+Operations:
+  -h|--help          display this option summary
+  -d|--download      download package files
+  -e|--erase         remove packages
+  -i|--install       install package files
+  -m|--make          make a package
+  -qa|--query-all    list all installed packages
+  -qf|--query-file   show package that has file
+  -ql|--query-list   list files from named package
+  -qr|--query-repo   list packages in external repositiory
+</pre>
+
+<p>
+The <tt>pacman</tt> command line above shows a specific order for <i>options</i>,
+<i>operations</i> and <i>names</i>; however, they actually can be arraged in any
+order.
+
+<p>
+<b>Options</b>
+<br>
+Options can be repeated. If multiple conflicting options are given, the last
+one is used and the others are silently ignored. Each option applies only to
+some operations.
+
+<p>
+<b>Operations</b>
+<br>
+One operation must be supplied, and only one operation is allowed; all other
+uses of <tt>pacman</tt> display a help summary.
+
+<p>
+<b>Package Names</b>
+<br>
+There are two kinds of package names used with <tt>pacman</tt>.
+
+<p>
+Package <i>download</i>, <i>installation</i>, <i>make</i> and
+<i>query repo</i> operations refer to actual binary package file names.
+These files are <tt>tar</tt> archives compressed with <tt>bzip2</tt>.
+
+<p>
+Package <i>erase</i>, <i>query all</i>, <i>query file</i> and <i>query list</i>
+operations refer to package names without the CPU architecture and <tt>.tbz</tt>
+suffix. This shorter name conceptually refers to the package as its files are
+installed in various directories; it is not a name of a literal package file.
+With the <i>erase</i> and <i>query list</i> operations the name is given on the
+<tt>pacman</tt> command line. With the <i>query all</i> and <i>query file</i>
+operations the name is listed as output from <tt>pacman</tt>.
+
+<p>
+<br><hr>
+<!--Table of Child-Links-->
+<a name="CHILD_LINKS"><strong>Subsections</strong></a>
+
+<ul class="ChildLinks">
+<li><a name="tex2html486"
+  href="node38.html"><span class="arabic">4</span>.<span class="arabic">10</span>.<span class="arabic">1</span> Using pacman with ttylinux</a>
+<li><a name="tex2html487"
+  href="node39.html"><span class="arabic">4</span>.<span class="arabic">10</span>.<span class="arabic">2</span> Using pacman on a non-ttylinux Host</a>
+</ul>
+<!--End of Table of Child-Links-->
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html484"
+  href="node38.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html482"
+  href="node27.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html476"
+  href="node36.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html485"
+  href="node38.html">4.10.1 Using pacman with</a>
+<b> Up:</b> <a name="tex2html483"
+  href="node27.html">4 System Guide</a>
+<b> Previous:</b> <a name="tex2html477"
+  href="node36.html">4.9 Using Dialup</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

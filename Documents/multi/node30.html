@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>4.3 Bootup, Shutdown and System Configuration</title>
+<meta name="description" content="4.3 Bootup, shutdown and system Configuration">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node31.html">
+<link rel="previous" href="node29.html">
+<link rel="up" href="node27.html">
+<link rel="next" href="node31.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html414"
+  href="node31.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html412"
+  href="node27.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html406"
+  href="node29.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html415"
+  href="node31.html">4.4 Shell Environment</a>
+<b> Up:</b> <a name="tex2html413"
+  href="node27.html">4 System Guide</a>
+<b> Previous:</b> <a name="tex2html407"
+  href="node29.html">4.2 Basic Features</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h2><a name="SECTION00053000000000000000"></a>
+<a name="startup"></a>
+<br>
+<span class="arabic">4</span>.<span class="arabic">3</span> Bootup, Shutdown and System Configuration
+</h2>
+
+<p>
+On system bootup, the init process runs the <tt>/etc/rc.d/rc.sysinit</tt> script
+to setup the system, such as setting the clock, system font, keyboard map and
+checking the file systems. <tt>rc.sysinit</tt> also runs the
+<tt>/etc/rc.d/rc.local</tt> script <i>and then</i> runs all the programs in the
+<tt>/etc/rc.d/rc.startup</tt> directory, all with the command line parameter
+<tt>start</tt>.
+
+<p>
+For ttylinux systems installed by the <tt>/sbin/ttylinux-flash</tt> script, the
+system startup script <tt>/etc/rc.d/rc.sysinit</tt> attempts to find and mount the
+drive that is booted from and then run a script on that drive. Remember: this
+ttylinux system is a RAM disk system, changes made to files are not retained
+for the next boot because the file system is in RAM. This feature of mounting
+the booted drive and running a startup script provides the user with a
+persistent boot-time startup configuration that is retained from one boot to
+the next. This user-maintainable startup script on the boot drive is in the
+<tt>config/ttylinux</tt> directory; a default version of this script is put onto
+the drive when the <tt>/sbin/ttylinux-flash</tt> script is run. This script is a
+very convenient place to configure your particular network interface for
+ttylinux startup.
+
+<p>
+On system shutdown, the script <tt>/etc/rc.d/rc.sysdone</tt> runs. This script
+runs all the programs in the <tt>/etc/rc.d/rc.shutdown</tt> directory <i>and
+then</i> runs the <tt>/etc/rc.d/rc.local</tt> script, all with the command line
+parameter <tt>stop</tt>.
+
+<p>
+All the programs in <tt>/etc/rc.d/rc.startup</tt> and <tt>/etc/rc.d/rc.shutdown</tt>
+are symbolic links that reference actual shell scripts or binary programs; they
+are run in the ASCII order of their symbolic link file names. These symbolic
+links are named with leading numbers to help control their ordering e.g.,
+<tt>10.network</tt> is the symbolic link the the network startup program. The
+actual programs are in <tt>/etc/rc.d/init.d</tt>. Removing a symbolic link
+disables the program from starting up. These programs typically are shell
+scripts; they are commonly called <i>initscripts</i>.
+
+<p>
+Initscripts can be interactively invoked. The following command runs the network
+script <tt>/etc/rc.d/init.d/syslog</tt> with the command line option <tt>stop</tt>.
+
+<p>
+<pre>
+	service syslog stop
+</pre>
+
+<p>
+All scripts use the command line options <tt>start</tt>, <tt>stop</tt>, <tt>reload</tt>,
+<tt>restart</tt> and <tt>status</tt>. They print a list of supported options if they
+are called with no option present.
+
+<p>
+The initscripts define the basic ttylinux bootup system configuration. The
+initscripts are configurable to an extent; thus the bootup configuration is
+configurable to an extent. The bootup system configuration is specified in
+ASCII text files in the <tt>/etc/sysconfig</tt> directory; this directory is
+intended to have only files that are read by the various initscripts. All files
+read by initscripts for configuration options should reside in
+<tt>/etc/sysconfig</tt>.
+
+<p>
+There are two files in <tt>/etc</tt> that describe your ttylinux build-time
+configurations. <tt>/etc/ttylinux-host</tt> is a text file that describes
+something about the host architecture that built your ttylinux distribution.
+<tt>/etc/ttylinux-target</tt> is a text file that describes some things about the
+architecture of your running ttylinux distribution.
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html414"
+  href="node31.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html412"
+  href="node27.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html406"
+  href="node29.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html415"
+  href="node31.html">4.4 Shell Environment</a>
+<b> Up:</b> <a name="tex2html413"
+  href="node27.html">4 System Guide</a>
+<b> Previous:</b> <a name="tex2html407"
+  href="node29.html">4.2 Basic Features</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

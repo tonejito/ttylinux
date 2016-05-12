@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>4.2 Basic Features</title>
+<meta name="description" content="4.2 basic Features">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node30.html">
+<link rel="previous" href="node28.html">
+<link rel="up" href="node27.html">
+<link rel="next" href="node30.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html404"
+  href="node30.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html402"
+  href="node27.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html396"
+  href="node28.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html405"
+  href="node30.html">4.3 Bootup, Shutdown and</a>
+<b> Up:</b> <a name="tex2html403"
+  href="node27.html">4 System Guide</a>
+<b> Previous:</b> <a name="tex2html397"
+  href="node28.html">4.1 Boot Parameters</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h2><a name="SECTION00052000000000000000">
+<span class="arabic">4</span>.<span class="arabic">2</span> Basic Features</a>
+</h2>
+
+<p>
+Upon boot-up, ttylinux provides 6 text consoles for login. There are two
+initial accounts: <tt>root</tt>, the administrator account, with password
+<tt>password</tt>; <tt>user</tt>, a user account, with password <tt>password</tt>
+
+<p>
+The <tt>syslogd</tt> and <tt>klog</tt> daemons are running and logging kernel and
+system messages to the file <tt>/var/log/messages</tt>.
+
+<p>
+The available text editor is <tt>vi</tt>; invoke it by typing <tt>vi</tt>
+<tt>/path/to/filename</tt>. This version of <tt>vi</tt> is a minimal version provided
+by <tt>busybox</tt>. Documentation and help for using <tt>vi</tt> is available in
+many places on the web.
+
+<p>
+For manipulation of users, groups and passwords, the tools <tt>adduser</tt>,
+<tt>addgroup</tt>, <tt>deluser</tt>, <tt>delgroup</tt> and <tt>passwd</tt> are present.
+
+<p>
+If you have not changed the keyboard settings as outlined in the configuration
+section, section <a href="node26.html#configuration">3.4.6</a> above, ttylinux will use its default
+keyboard settings. The default keyboard mapping is for a US keyboard.
+
+<p>
+The <tt>inetd</tt> super-server and the <tt>dropbear</tt> SSH server are running by
+default. An FTP or TFTP server will be forked by <tt>inetd</tt> when receiving
+either a connect from an FTP or TFTP client, respectively.
+
+<p>
+ttylinux has <b>no</b> <tt>telnet</tt> server or client; the <tt>dropbear</tt> SSH
+client is used to remotely log in to other hosts.
+
+<p>
+ttylinux includes a basic packet filtering firewall which is enabled by
+default. Section <a href="node34.html#firewaller">4.7</a> below describes the configuring the ttylinux
+firewall.
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html404"
+  href="node30.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html402"
+  href="node27.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html396"
+  href="node28.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html405"
+  href="node30.html">4.3 Bootup, Shutdown and</a>
+<b> Up:</b> <a name="tex2html403"
+  href="node27.html">4 System Guide</a>
+<b> Previous:</b> <a name="tex2html397"
+  href="node28.html">4.1 Boot Parameters</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>3.4.6 Manual Installation - System Configuration</title>
+<meta name="description" content="3.4.6 manual Installation - System Configuration">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="previous" href="node25.html">
+<link rel="up" href="node20.html">
+<link rel="next" href="node27.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html359"
+  href="node27.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html357"
+  href="node20.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html353"
+  href="node25.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html360"
+  href="node27.html">4 System Guide</a>
+<b> Up:</b> <a name="tex2html358"
+  href="node20.html">3.4 Install from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html354"
+  href="node25.html">3.4.5 Manual Installation -</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h3><a name="SECTION00044600000000000000"></a>
+<a name="configuration"></a>
+<br>
+<span class="arabic">3</span>.<span class="arabic">4</span>.<span class="arabic">6</span> Manual Installation - System Configuration
+</h3>
+
+<p>
+This section covers the minimum configuration needed to run ttylinux. More
+system configuration can be done; see the system guide, section <a href="node27.html#sysguide">4</a>,
+below for information.
+
+<p>
+The configuration files and options described in this section are present in a
+ttylinux system installed from the bootable CD-ROM. Following the installation
+instructions above, the file system is in <tt>mnt/newroot</tt>, that is the
+example starting point for the following configuration descriptions.
+
+<p>
+<b>/etc/fstab</b>
+
+<p>
+<tt>/etc/fstab</tt> needs to have the correct device for the root directory, the
+manually installed ttylinux <tt>/etc/fstab</tt> still specifies a RAM disk device
+for the root directory. Change the RAM disk device, /dev/ram0, to be the disk
+partition device in which the ttylinux root file system was installed. In the
+above example /dev/hda8 was used, so for that example the root directory in
+<tt>/etc/fstab</tt> would be specified as:
+
+<p>
+<pre>
+/dev/hda8     /     ext2     defaults     0 0
+</pre>
+
+<p>
+<b>Boot Loader</b>
+
+<p>
+The boot loader needs to specify the ttylinux kernel and root file system
+device. Following the installation instructions above, the <tt>LILO</tt>
+configuration file <tt>/etc/lilo.conf</tt> would include the following. Note the
+<i>initrd</i> specifier is removed and the <i>root</i> specifier is changed to
+/dev/hda8.
+
+<p>
+<pre>
+image = /boot/ttylinux-vmlinuz
+	label = ttylinux
+	root  = /dev/hda8
+	read-only
+</pre>
+
+<p>
+<b>Keyboard Map</b>
+
+<p>
+To use the current keyboard map from the Linux computer being used to install
+ttylinux, use the following commands.
+
+<p>
+<pre>
+	rm mnt/newroot/etc/i18n/kmap
+	mnt/newroot/bin/dumpkmap &gt;mnt/newroot/etc/i18n/kmap
+</pre>
+
+<p>
+<b>Timezone</b>
+
+<p>
+The best way to set the ttylinux timezone is to use the boot parameters as
+described in section <a href="node28.html#bootparms">4.1</a>. This needs to be done only one time for
+an installed ttylinux system as this boot option becomes persistent.
+
+<p>
+<b>Dial-up Network Information</b>
+
+<p>
+ttylinux does not <i>directly</i> support dial-up networking with PPP and has no
+support at all for ISDN. Previous versions of ttylinux did have PPP and ISDN
+support; their package structure is being re-organized and they may return in
+some later version of ttylinux.
+
+<p>
+ttylinux does have the PPP binaries: <tt>/usr/sbin/pppd</tt> and
+<tt>/usr/sbin/chat</tt>, but currently it is up to you to configure and use them.
+
+<p>
+<b>Unmount and Reboot</b>
+
+<p>
+Now unmount the newly installed partition.
+
+<p>
+<pre>
+	umount mnt/newroot
+</pre>
+
+<p>
+And reboot to run the new ttylinux system.
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html359"
+  href="node27.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html357"
+  href="node20.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html353"
+  href="node25.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html360"
+  href="node27.html">4 System Guide</a>
+<b> Up:</b> <a name="tex2html358"
+  href="node20.html">3.4 Install from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html354"
+  href="node25.html">3.4.5 Manual Installation -</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

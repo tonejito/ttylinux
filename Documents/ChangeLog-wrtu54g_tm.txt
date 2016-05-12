@@ -1,0 +1,46 @@
+Current  Maintainer: (2008-    ) Douglas Jerome <douglas@ttylinux.org>
+
+
+Version 16.1, Mon May 27 09:10:10 MST 2013
+ - distribution named "bricolage"
+ - updated bash-4.2 patch level from 39 to 45
+ - updated from busybox-1.20.2 to busybox-1.21.0
+ - updated from dropbear-2012.55 to dropbear-2013.58
+ - updated from e2fsprogs-1.42.6 to e2fsprogs-1.42.7
+
+Version 16.0, Fri Mar 29 22:04:48 MST 2013
+ - distribution named "ocelot"
+ - updated from busybox-1.19.4 to busybox-1.20.2
+ - updated from dropbear-0.53.1 to dropbear-2012.55
+ - updated from e2fsprogs-1.42.2 to e2fsprogs-1.42.6
+ - (bash) updated from patch level 24 to patch level 39
+
+Version 14.1, Sun May 13 19:04:51 MST 2012
+ - distribution named "boomslang"
+ - updated from busybox-1.19.3 to busybox-1.19.4
+ - updated from e2fsprogs-1.42.1 to e2fsprogs-1.42.2
+ - updated from ncurses-5.7 to ncurses-5.9
+
+Version 14.0, Sun Apr  8 20:47:06 MST 2012
+ - skipped version numbers -- how wierd is that
+ - distribution named "hawberk"
+ - updated bash-4.2 patchlevel to 24
+ - updated from e2fsprogs-1.41.12 to e2fsprogs-1.42.1
+
+Version 10.0, Tue Feb 28 22:14:02 MST 2012
+ - distribution named "bazooka"
+ - updated from uClibc-0.9.31 to  uClibc-0.9.32
+ - updated from bash-4.1 to bash-4.2
+ - updated from busybox-1.18.5 to busybox-1.19.3
+ - updated from e2fsprogs-1.41.14 to e2fsprogs-1.42
+
+Version 0.3, Jan 14 20:43
+ - distribution named "buzzkill"
+ - changed ram disk size from 4 MB to 5 MB
+ - updated from busybox-1.18.4 to busybox-1.18.5
+ - updated from dropbear-0.52 to dropbear-0.53.1
+ - updated from e2fsprogs-1.41.12 to e2fsprogs-1.41.14
+
+Version 0.2, Apr 18 21:07
+ - distribution named "maiko"
+ - initial mipsel-uClibc release for WRTU54G-TM

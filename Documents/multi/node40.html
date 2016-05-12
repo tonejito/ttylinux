@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>4.11 Using the sysconfig Script</title>
+<meta name="description" content="4.11 using the sysconfig Script">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node41.html">
+<link rel="previous" href="node37.html">
+<link rel="up" href="node27.html">
+<link rel="next" href="node41.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html514"
+  href="node41.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html512"
+  href="node27.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html506"
+  href="node39.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html515"
+  href="node41.html">4.12 Depricated and Legacy</a>
+<b> Up:</b> <a name="tex2html513"
+  href="node27.html">4 System Guide</a>
+<b> Previous:</b> <a name="tex2html507"
+  href="node39.html">4.10.2 Using pacman on</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h2><a name="SECTION000511000000000000000"></a>
+<a name="sysconfig"></a>
+<br>
+<span class="arabic">4</span>.<span class="arabic">11</span> Using the sysconfig Script
+</h2>
+
+<p>
+The <tt>/sbin/sysconfig</tt> shell script can be used to set, and to show, the
+fields in various ttylinux system configuration files; it can set or show any
+value for any "ITEM=value" line in any configuration file in the
+<tt>/etc/sysconfig</tt> and <tt>/etc/sysconfig/network-scripts</tt> directories.
+
+<p>
+The following commands sets "ENABLE=yes" and "DHCP=yes" in the
+<tt>/etc/sysconfig/network-scripts/ifcfg-eth0</tt> file.
+
+<p>
+<pre>
+	sysconfig -nc ifcfg-eth0.enable=yes
+	sysconfig -nc ifcfg-eth0.dhcp=yes
+</pre>
+
+<p>
+The "-nc" option in the above examples tells the sysconfig script to work on
+files in the <tt>/etc/sysconfig/network-scripts</tt> directory. The second option
+is in the form file.item=value.
+
+<p>
+To change the IP address of the Ethernet network interface, with 192.168.1.100
+as the example IP address, with a netmask of 255.255.255.0 and standard subnet
+gateway and broadcast addresses, use the following sequence of sysconfig script
+commands.
+
+<p>
+<pre>
+	sysconfig -nc ifcfg-eth0.ipaddress=192.168.1.100
+	sysconfig -nc ifcfg-eth0.network=192.168.1.0
+	sysconfig -nc ifcfg-eth0.netmaks=255.255.255.0
+	sysconfig -nc ifcfg-eth0.gateway=192.168.1.1
+	sysconfig -nc ifcfg-eth0.broadcast=192.168.1.255
+</pre>
+
+<p>
+Use "-sc" for the first option to the <tt>sysconfig</tt> script in order to work
+with system configuration files in the <tt>/etc/sysconfig</tt> directory.
+
+<p>
+Use the following command to get complete, up-to-date help description directly
+from <tt>/sbin/sysconfig</tt>
+<pre>
+	sysconfig --help
+</pre>
+
+<p>
+<br><hr>
+
+</body>
+</html>

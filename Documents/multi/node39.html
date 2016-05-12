@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>4.10.2 Using pacman on a non-ttylinux Host</title>
+<meta name="description" content="4.10.2 using pacman on a non-ttylinux Host">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="previous" href="node38.html">
+<link rel="up" href="node37.html">
+<link rel="next" href="node40.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html504"
+  href="node40.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html502"
+  href="node37.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html498"
+  href="node38.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html505"
+  href="node40.html">4.11 Using the sysconfig</a>
+<b> Up:</b> <a name="tex2html503"
+  href="node37.html">4.10 Package Management</a>
+<b> Previous:</b> <a name="tex2html499"
+  href="node38.html">4.10.1 Using pacman with</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h3><a name="SECTION000510200000000000000"></a>
+<a name="foreignpacman"></a>
+<br>
+<span class="arabic">4</span>.<span class="arabic">10</span>.<span class="arabic">2</span> Using pacman on a non-ttylinux Host
+</h3>
+
+<p>
+<b>Package Making Issues</b>
+
+<p>
+The intended use of <tt>pacman</tt> on non-ttylinux hosts is for assembling
+ttylinux packages.
+
+<p>
+Package making seems an easy task as ttylinux packages are <tt>tar</tt> archives
+compressed with <tt>bzip2</tt>. A complicating factor in using <tt>pacman</tt> to
+make ttylinux packages is that the package making operation is an exact inverse
+of package installation, and there is a controlling list of files that comprises
+the files in the package. This controlling list of files is the database file
+associated with the package.
+
+<p>
+A package database file is created by the <tt>pacman</tt> package installation
+operation; it is read by the <tt>pacman</tt> package making operation.
+
+<p>
+All the package database files are in the <tt>/etc/share/ttylinux</tt> directory,
+which your non-ttylinux host probably does not have, nor should you want that
+directory on your non-ttylinux host.
+
+<p>
+Also, package installation puts files in directories all over your system, and
+for the inverse operation of package making you do not want to get files from
+directories all over your system. Putting files all around your system's
+directories in order to make a ttylinux package is a bothersome at best, and
+risky at worst.
+
+<p>
+Ideally, you would have a staging area, with the ttylinux files for which you
+want to create a package, under a single convenient private directory. And
+the package database file in a convenient private directory.
+
+<p>
+<b>Alternate Directories</b>
+
+<p>
+<tt>pacman</tt> can use a user-specified root directory from which it gets the
+files to make a package, and it can use a user-specified directory to look for
+the package database file. These user-specified directories, file root and
+package database directories, are used by <b>all</b> the <tt>pacman</tt> operations
+except package <i>download</i> and <i>query repo</i> operations. With this
+capabilities, <tt>pacman</tt> can install, query and make packages all with an
+alternate private root directory, and using an alternate private directory for
+managing the package database files.
+
+<p>
+The appropriate way to use <tt>pacman</tt> on a non-ttylinux host is to set the
+<tt>pacman</tt> file root and package database directories to your own alternate
+private directories. This is done by using environment variables. It may be
+convenient to use shell scripts in which the environment variables that
+control the user-specified directories are set, and sequences of <tt>pacman</tt>
+commands work within this environment.
+
+<p>
+There are three environment variables that customize <tt>pacman</tt> behaviour.
+
+<p>
+<pre>
+PACMAN_FILES_ROOT_DIR  This sets the root directory that pacman uses to install
+                       files and also to look for files when making packages or
+                       removing packages. The default that pacman uses when
+                       this is not set is the system's root directory, /.
+
+PACMAN_PACKAGE_DB_DIR  This sets the directory in which to refer to, make or
+                       remove the package database files. The default that
+                       pacman uses when this is not set is /usr/share/ttylinux.
+
+PACMAN_REPO_CACHE_DIR  This sets the directory that pacman uses to make
+                       repository cache files for all repository operations.
+                       The default that pacman uses when this is not set is
+                       /usr/share/ttylinux.
+</pre>
+
+<p>
+An example usage of these environment variables for using <tt>pacman</tt> on a
+non-ttylinux host is:
+<pre>
+#!/bin/bash
+
+# Script to merge the bash and busybox packages into one single package.
+# The pacman script must be in the $PATH.
+
+export PACMAN_FILES_ROOT_DIR=$(pwd)/p_root
+export PACMAN_PACKAGE_DB_DIR=$(pwd)/p_root/usr/share/ttylinux
+export PACMAN_REPO_CACHE_DIR=$(pwd)/p_root/usr/share/ttylinux
+
+# Remove everything created by this script so that this script is repeatable.
+#
+rm -rf p_root
+rm -rf new-stuff-i486.tbz
+
+# Make an alternate root directory.
+#
+mkdir -p p_root/usr/share/ttylinux
+
+pacman --repo=ttylinux.net --install --vers=9.1 bash-3.2.48-i486.tbz
+#
+# Now these two files are installed:
+#      $(pwd)/p_root/bash
+#      $(pwd)/p_root/sh -&gt; bash
+# And there is a package database file:
+#      $(pwd)/p_root/usr/share/ttylinux/pkg-bash-3.2.48-FILES
+# And there is a repository cache file:
+#      $(pwd)/p_root/usr/share/ttylinux/repo-ttylinux.net
+
+pacman --repo=ttylinux.net --install --vers=9.1 busybox-1.15.3-i486.tbz
+#
+# Now there are a bunch of files in:
+#      $(pwd)/p_root/bin/
+#      $(pwd)/p_root/sbin/
+#      $(pwd)/p_root/usr/bin/
+#      $(pwd)/p_root/usr/sbin/
+#      &lt;etc&gt;
+# And there is a package database file:
+#      $(pwd)/p_root/usr/share/ttylinux/pkg-busybox-1.15.3-FILES
+# And there is a repository cache file:
+#      $(pwd)/p_root/usr/share/ttylinux/repo-ttylinux.net
+
+# Merge the two packages and make a new single package.
+#
+cat $(pwd)/p_root/usr/share/ttylinux/pkg-bash-3.2.48-FILES \
+    $(pwd)/p_root/usr/share/ttylinux/pkg-busybox-1.15.3-FILES \
+    &gt;$(pwd)/p_root/usr/share/ttylinux/pkg-new-stuff-FILES
+pacman --make new-stuff-i486.tbz
+
+# Show the new package binary file.
+#
+ls -hl new-stuff-i486.tbz
+
+exit 0
+</pre>
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html504"
+  href="node40.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html502"
+  href="node37.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html498"
+  href="node38.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html505"
+  href="node40.html">4.11 Using the sysconfig</a>
+<b> Up:</b> <a name="tex2html503"
+  href="node37.html">4.10 Package Management</a>
+<b> Previous:</b> <a name="tex2html499"
+  href="node38.html">4.10.1 Using pacman with</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>3.1 CD-ROM Image Overview</title>
+<meta name="description" content="3.1 cd-rom Image Overview">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node13.html">
+<link rel="previous" href="node11.html">
+<link rel="up" href="node11.html">
+<link rel="next" href="node13.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html214"
+  href="node13.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html212"
+  href="node11.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html206"
+  href="node11.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html215"
+  href="node13.html">3.2 RAM Disk or</a>
+<b> Up:</b> <a name="tex2html213"
+  href="node11.html">3 Installing from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html207"
+  href="node11.html">3 Installing from CD-ROM</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h2><a name="SECTION00041000000000000000">
+<span class="arabic">3</span>.<span class="arabic">1</span> CD-ROM Image Overview</a>
+</h2>
+
+<p>
+The ttylinux CD-ROM image is the source used for installation; it is a CD-ROM
+ISO 9660 file system. The pc_i486 CD-ROM has the following directory structure:
+
+<p>
+<pre>
+|-- AUTHORS
+|-- COPYING
+|-- LABEL
+|-- boot
+|   |-- System.map
+|   |-- filesys.gz
+|   |-- grub
+|   |   `-- loopback.cfg
+|   |-- isolinux
+|   |   |-- boot.msg
+|   |   |-- help_f2.msg
+|   |   |-- help_f3.msg
+|   |   |-- help_f4.msg
+|   |   |-- isolinux.bin
+|   |   `-- isolinux.cfg
+|   |-- vmlinux
+|   `-- vmlinuz
+|-- config
+|   |-- kernel-2.6.34.6.cfg
+|   |-- syslinux
+|   `-- ttylinux-setup
+|-- doc
+|   |-- ChangeLog-pc_i486
+|   |-- Flash_Disk_Howto.txt
+|   |-- User_Guide.html
+|   |-- User_Guide.pdf
+|   `-- User_Guide.tex
+|-- packages
+|   |-- bash-4.2-i486.tbz
+|   |-- busybox-1.19.3-i486.tbz
+|   |-- dropbear-0.53.1-i486.tbz
+|   |-- e2fsprogs-1.42.1-i486.tbz
+|   |-- glibc-2.9-i486.tbz
+|   |-- gpm-1.20.6-i486.tbz
+|   |-- iptables-1.4.12.2-i486.tbz
+|   |-- lilo-23.2-i486.tbz
+|   |-- ncurses-5.7-i486.tbz
+|   |-- ppp-2.4.5-i486.tbz
+|   |-- retawq-0.2.6c-i486.tbz
+|   |-- ttylinux-basefs-1.0-i486.tbz
+|   |-- ttylinux-devfs-1.0-i486.tbz
+|   `-- ttylinux-utils-1.3-i486.tbz
+`-- qemu-i486.sh
+</pre>
+
+<p>
+Several files are critical for installation, note their location in the CD-ROM
+image:
+<br><tt>CD-ROM/</tt><b>boot/filesys.gz</b> - ttylinux gzipped ext2 file system image
+<br><tt>CD-ROM/</tt><b>boot/vmlinuz</b> - gzipped ttylinux Linux kernel
+<br><tt>CD-ROM/</tt><b>config/ttylinux-setup</b> - user-maintained RAM disk startup
+
+<p>
+The ttylinux installation script automates the process of installing ttylinux;
+the scripts also copy the other documentation and information files to the new
+installed system.
+
+<p>
+For manual installation you can mount the CD-ROM or mount the CD-ROM image file
+via loop device for access to the critical files. The manual processes of
+installing ttylinux describes this in more detail.
+
+<p>
+<br><hr>
+
+</body>
+</html>

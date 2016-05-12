@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>3.2 RAM Disk or Persistent Storage Boot</title>
+<meta name="description" content="3.2 ram Disk or Persistent storage Boot">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node14.html">
+<link rel="previous" href="node12.html">
+<link rel="up" href="node11.html">
+<link rel="next" href="node14.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html224"
+  href="node14.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html222"
+  href="node11.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html216"
+  href="node12.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html225"
+  href="node14.html">3.3 Transfer from CD-ROM</a>
+<b> Up:</b> <a name="tex2html223"
+  href="node11.html">3 Installing from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html217"
+  href="node12.html">3.1 CD-ROM Image Overview</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h2><a name="SECTION00042000000000000000">
+<span class="arabic">3</span>.<span class="arabic">2</span> RAM Disk or Persistent Storage Boot</a>
+</h2>
+
+<p>
+There are two basic types of ttylinux installation, resulting in two type of
+booted systems: a RAM disk or persistent storage.
+
+<p>
+A <b>Ram Disk</b> installation results in a system that puts the root file
+system into RAM when it boots, which is what the bootable CD-ROM does. If you
+want to put ttylinux onto a flash drive, pen drive, USB memory stick, travel
+drive, etc. then you very probably want this sort of installation. This is
+typical for flash drives, but not for spinning hard disks, for at least two
+reasons: 1) flash drives have been much slower than hard drives, so maintaining
+a live file system on a flash drive has been intolerably slow, and 2) these are
+removable drive which have been difficult to consistently mount as they move
+between interfaces and computers. With this booting scheme, the boot loader
+takes the root file system from the drive and gives it to the kernel which
+decompresses it and mounts it as a read/write root file system in a RAM disk in
+memory. Changes to files in the root file system are lost when the system shuts
+down; persistent changes must be stored elsewhere. However, ttylinux has
+specific support for persistent changes to its boot-time startup with a RAM
+disk system, this is described section <a href="node19.html#flashback">3.3.5</a>. The program
+<tt>/sbin/ttylinux-flash</tt> can be used to copy ttylinux from the CD-ROM to
+another drive and configure it to boot in this manner. The processes of putting
+ttylinux onto a drive for booting a RAM disk system and configuring its
+boot-time startup support is described in more detail in the next section
+<a href="node14.html#bootflash">3.3</a>.
+
+<p>
+A <b>Persistent Storage</b> installation results in a system that boots with the
+read/write root file system maintained directly on the spinning hard disk or
+solid state drive. If you have a spinning hard disk or one of the new fast
+solid state drives, and it is not removable, then you probably want this sort
+of installation. If you want to install onto removable media and will move the
+media to different slots or computers, then you do not want this kind of
+installation. The program <tt>/sbin/ttylinux-installer</tt> can be used to install
+ttylinux from the CD-ROM onto a spinning hard disk or solid state drive and
+configure it to boot in this manner. The processes of installing ttylinux onto
+a hard drive and booting a persistent storage root file system is described in
+more detail in section <a href="node20.html#bootfixed">3.4</a>.
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html224"
+  href="node14.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html222"
+  href="node11.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html216"
+  href="node12.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html225"
+  href="node14.html">3.3 Transfer from CD-ROM</a>
+<b> Up:</b> <a name="tex2html223"
+  href="node11.html">3 Installing from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html217"
+  href="node12.html">3.1 CD-ROM Image Overview</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

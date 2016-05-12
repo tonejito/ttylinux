@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>3.4.2 Target Partition Device</title>
+<meta name="description" content="3.4.2 target Partition Device">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node23.html">
+<link rel="previous" href="node21.html">
+<link rel="up" href="node20.html">
+<link rel="next" href="node23.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html321"
+  href="node23.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html319"
+  href="node20.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html313"
+  href="node21.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html322"
+  href="node23.html">3.4.3 Boot Loader Location</a>
+<b> Up:</b> <a name="tex2html320"
+  href="node20.html">3.4 Install from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html314"
+  href="node21.html">3.4.1 Source CD-ROM Device</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h3><a name="SECTION00044200000000000000"></a>
+<a name="targetpartition"></a>
+<br>
+<span class="arabic">3</span>.<span class="arabic">4</span>.<span class="arabic">2</span> Target Partition Device
+</h3>
+
+<p>
+You need to know, or find out, the device name for the disk partition on which
+you want to install ttylinux. The device names for disk partitions are formed
+by appending a number to the device name of the corresponding disk. For
+example, if your disk device is /dev/hda, the device /dev/hda3 is the third
+partition on that disk. Numbers 1-4 are the primary partitions, extended
+partitions start at 5.
+
+<p>
+ATTENTION: If you plan on installing onto a USB drive, or some other frequently
+moved disk device, then do not install ttylinux with the instructions here; use
+the instructions in section <a href="node14.html#bootflash">3.3</a>. The disk and partition devices
+used by this installation process would likely be different between different
+computers, so this installation may not correctly boot when booted on a
+computer other than the computer on which the installation is performed.
+
+<p>
+Due to the combined space requirements of the 8 MB ttylinux file system and the
+3 MB ttylinux kernel, and considering some margin, the minimum partition size
+onto which you can install ttylinux and have it work is about 12 MB.
+
+<p>
+IDE disks use the same device names as given for IDE CD-ROM devices above. For
+SATA, the names are as follows:
+
+<p>
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="LEFT">Device Name</td>
+<td align="LEFT">Description</td>
+</tr>
+<tr><td align="LEFT">/dev/sda</td>
+<td align="LEFT">First SATA Disk Device</td>
+</tr>
+<tr><td align="LEFT">/dev/sdb</td>
+<td align="LEFT">Second SATA Disk Device</td>
+</tr>
+<tr><td align="LEFT">/dev/sdc</td>
+<td align="LEFT">Third SATA Disk Device</td>
+</tr>
+<tr><td align="LEFT">/dev/sdd</td>
+<td align="LEFT">Fourth SATA Disk Device</td>
+</tr>
+</table>
+</div>
+
+<p>
+Note that if you want to create a dual-boot setup with Windows and ttylinux on
+the same disk, a topic not covered here, you can't use the first partition
+/dev/hda1 or /dev/sda1 as your ttylinux target partition, because that is where
+Windows needs to be installed to work.
+
+<p>
+Here are some examples of possible device names for your target partition:
+
+<p>
+<div align="CENTER">
+<table cellpadding=3 border="1">
+<tr><td align="LEFT">Device Name</td>
+<td align="LEFT">Description</td>
+</tr>
+<tr><td align="LEFT">/dev/hda1</td>
+<td align="LEFT">First Primary Partition on Primary IDE Master</td>
+</tr>
+<tr><td align="LEFT">/dev/hdb5</td>
+<td align="LEFT">First Extended Partition on Primary IDE Slave</td>
+</tr>
+<tr><td align="LEFT">/dev/sda2</td>
+<td align="LEFT">Second Primary Partition on First SATA Disk</td>
+</tr>
+<tr><td align="LEFT">/dev/sdc6</td>
+<td align="LEFT">Second Extended Partition on Third SATA Disk</td>
+</tr>
+</table>
+</div>
+
+<p>
+Note that depending on the BIOS, booting might be possible only from the first
+two disks installed in the system.
+
+<p>
+Also, you can look at the directory listing of <tt>/sys/block</tt> to see which
+block devices the kernel has detected, as disk drives are block devices.
+
+<p>
+<b>Drive Partitioning, if Needed</b>
+
+<p>
+What to do if your target disk is not partitioned yet? Linux systems, including
+ttylinux, have the <tt>fdisk</tt> program that can be used to partition disks. For
+example, to partition a disk connected as master to the first IDE controller,
+use:
+
+<p>
+<pre>
+	fdisk /dev/hda
+</pre>
+
+<p>
+The user interface of <tt>fdisk</tt> is somewhat primitive, <i>so be careful</i>.
+If you haven't used it before, a good idea would be to search the Internet for
+instructions. The basic commands you may need are "d" to delete a partition,
+"n" to create a new partition, "p" to print the current partition table, and
+"w" to write the edited partition table to disk. You can also use "q" to exit
+<tt>fdisk</tt> without saving your changes.
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html321"
+  href="node23.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html319"
+  href="node20.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html313"
+  href="node21.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html322"
+  href="node23.html">3.4.3 Boot Loader Location</a>
+<b> Up:</b> <a name="tex2html320"
+  href="node20.html">3.4 Install from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html314"
+  href="node21.html">3.4.1 Source CD-ROM Device</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

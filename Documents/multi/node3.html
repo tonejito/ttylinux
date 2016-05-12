@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>1.1 ttylinux Overview</title>
+<meta name="description" content="1.1 ttylinux Overview">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node4.html">
+<link rel="previous" href="node2.html">
+<link rel="up" href="node2.html">
+<link rel="next" href="node4.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html109"
+  href="node4.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html107"
+  href="node2.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html101"
+  href="node2.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html110"
+  href="node4.html">1.2 Licenses</a>
+<b> Up:</b> <a name="tex2html108"
+  href="node2.html">1 Introduction</a>
+<b> Previous:</b> <a name="tex2html102"
+  href="node2.html">1 Introduction</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h2><a name="SECTION00021000000000000000">
+<span class="arabic">1</span>.<span class="arabic">1</span> ttylinux Overview</a>
+</h2>
+
+<p>
+ttylinux tries to use as little space as possible and be a familiar and
+complete command-line Linux system, with fairly up-to-date Linux kernel and
+program utilities. It provides multi-tasking, multi-user Linux with networking
+capabilities in no more than 8 MB of disk space. It is prepared for Internet
+access by Ethernet. A text-based web browser, command-line remote login secure
+client and server, NFS client, FTP server, and TFTP server are a part of
+ttylinux.
+
+<p>
+ttylinux can be installed onto a disk drive, both spinning hard drive or flash
+drive such as a USB memory stick; it can be manually installed or installed by
+using an installer script. Installation by installer script or manual
+installation can be done with ttylinux itself or by using a different Linux
+system.
+
+<p>
+The ttylinux file system, excluding the Linux kernel, is 8 MB in size. Using
+the ttylinux installer script, a Linux kernel between 2.5 and 3.5 MB will also
+be installed. This makes a minimum workable size of about 12 MB for a hard
+drive partition on which to install ttylinux, although 32 MB of RAM are needed
+to use the automated ttylinux installer script.
+
+<p>
+ttylinux includes a package management script, named <b>pacman</b>, capable of
+<i>installing</i>, <i>making</i>, <i>removing</i> and <i>querying</i> ttylinux
+packages and their files. The package manager can <i>list</i> and <i>install</i>
+packages from an external repository via http. Pacman is useful for adapting
+ttylinux to specific needs.
+
+<p>
+<b>What ttylinux Is Not</b>
+
+<p>
+ttylinux is not a typical Linux distribution; it does not have a graphical user
+interface, software development tools, music player, document preparation nor
+printing tools, databases nor network services such as BIND, News Server nor
+Mail Transfer Agents.
+
+<p>
+<b>What ttylinux Can Do</b>
+
+<p>
+ttylinux is intended to be useful as the basis of an embedded system or a
+directed-purpose system: with its small size ttylinux boots quickly from flash
+drives and CR-ROM; it has been used as a system fix/repair tool, as a
+simulation host, and is a good basis for a rescue or installation CD-ROM.
+
+<p>
+ttylinux provides a working Linux environment with its boot image, and custom
+task-specific scripts can mount other parts of the file system to provide a
+larger system.
+
+<p>
+ttylinux is useful on computers which are considered obsolete, such as 486SX
+PC. It is for people who want to have a minimal Linux distribution to run when
+little space is available or needed. Some users may want to use the ttylinux
+file system but configure and build their own Linux kernel.
+
+<p>
+ttylinux can serve as a rough prototype of a larger system, since it uses the
+same C library, glibc, as full Linux systems, compiling programs on a different
+Linux computer and copying them to the ttylinux file system <span id="txt57">can</span>
+result in working programs. <b>However this is not a supported feature.</b>
+Programs compiled outside the normal ttylinux build process may require
+libraries not present in ttylinux. Worse, they may be compiled on a computer
+with different Linux kernel capabilities and make system calls not present in
+ttylinux.
+
+<p>
+ttylinux is for people who have Linux experience; it is not for beginners,
+unless you want to learn how a Linux system works underneath the Graphical User
+Interfaces. You must be able to use the interactive shell command-line, and it
+helps to know your way around Linux system. Most of the programs are
+<b>busybox</b> programs; these are smaller versions of the common Unix utilities.
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html109"
+  href="node4.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html107"
+  href="node2.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html101"
+  href="node2.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html110"
+  href="node4.html">1.2 Licenses</a>
+<b> Up:</b> <a name="tex2html108"
+  href="node2.html">1 Introduction</a>
+<b> Previous:</b> <a name="tex2html102"
+  href="node2.html">1 Introduction</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

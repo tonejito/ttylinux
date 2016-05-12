@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>3.4.4 Running the Installer</title>
+<meta name="description" content="3.4.4 running the Installer">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node25.html">
+<link rel="previous" href="node23.html">
+<link rel="up" href="node20.html">
+<link rel="next" href="node25.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html341"
+  href="node25.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html339"
+  href="node20.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html333"
+  href="node23.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html342"
+  href="node25.html">3.4.5 Manual Installation -</a>
+<b> Up:</b> <a name="tex2html340"
+  href="node20.html">3.4 Install from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html334"
+  href="node23.html">3.4.3 Boot Loader Location</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h3><a name="SECTION00044400000000000000">
+<span class="arabic">3</span>.<span class="arabic">4</span>.<span class="arabic">4</span> Running the Installer</a>
+</h3>
+
+<p>
+Once you have decided on target device and boot loader location, you can run
+the installer. The script is called <tt>ttylinux-installer</tt>. The following is
+the help output from the <tt>ttylinux-installer</tt> script, it describes how to
+invoke the script. The square brackets indicate an optional parameter, the
+<i>partition</i> device is used for the installation target device.
+
+<p>
+<pre>
+ttylinux-installer
+(C) 2008-2011 Douglas Jerome &lt;douglas@ttylinux.org&gt;
+
+Usage: $(basename $0) [ &lt;options&gt; ] &lt;source device&gt; &lt;target device&gt;
+Usage: $(basename $0) --config=&lt;file&gt; &lt;source device&gt;
+
+Options:
+     --help ......... Show this help.
+     -m | --mbr ..... Put lilo boot loader onto the Master Boot Record of the
+                      disk device containing the &lt;target device&gt; disk partition.
+     --nolilo ....... Do not put the lilo boot loader onto the disk drive.
+     --vcs=&lt;name&gt; ... Use &lt;name&gt; for the Virtual Context Script.
+
+&lt;source device&gt; is the CD-ROM device that has the ttylinux CD-ROM.
+
+&lt;target device&gt; is the disk partition device onto which ttylinux is installed;
+                it needs to be a disk partition device, not the whole disk
+                device.  An ext2 file system is created on this device.
+
+Create an ext2 file system on the disk partition device &lt;target device&gt;,
+install ttylinux from the CD-ROM &lt;source device&gt; into the new file system on
+&lt;target device&gt;, and then maybe put a lilo boot loader onto the target disk.
+The lilo boot loader is put onto the disk partition &lt;target device&gt; unless the
+-m or --mbr option is present, in which case the it is put onto the Master Boot
+Record of the disk device.  No lilo boot loader is put onto the disk if the
+--nolilo option is preset or if the running architecture does not support lilo
+e.g., ttylinux PowerPC.
+</pre>
+
+<p>
+For example, to install from the CD-ROM device /dev/hdc into partition device
+/dev/hda2 and placing LILO on the MBR, /dev/hda disk device, you would use:
+
+<p>
+<pre>
+	ttylinux-installer -m /dev/hdc /dev/hda2
+</pre>
+
+<p>
+Another example, installing from the second SATA CD-ROM device /dev/scd1 into
+the third partition device of the second SATA disk and placing LILO on the boot
+sector <i>of the target partition</i>:
+
+<p>
+<pre>
+	ttylinux-installer /dev/scd1 /dev/sdb3
+</pre>
+
+<p>
+The installer checks if the source CR-ROM device contains a ttylinux CD-ROM
+disc; if the CD-ROM disc is found then a summary of what is to be installed on
+which device is printed and you are given a choice of continuing or aborting.
+Enter "yes" to continue the installation.
+
+<p>
+The installer creates an ext2 file system on the target partition then copies
+the ttylinux distribution files onto the new file system, and then installs the
+LILO bootloader.
+
+<p>
+After the installer is finished you can remove the CD-ROM disc from your
+computer and reboot.
+
+<p>
+<b>Using the Installation Configuration File</b>
+
+<p>
+When you boot ttylinux from the CD-ROM image and log in as root, you will find
+a file named "install.conf" in the /root directory; this file is an example of
+an installation configuration file that can be used to direct the automated
+installtion activites of the ttylinux installer script. The example
+"install.conf" file is well documented; read it to learn how to use it.
+
+<p>
+You must first manually partition the hard drive, and then make sure the
+installation configuration file's fstab section matches the actual disk
+partitions.
+
+<p>
+Example, to install from the CD-ROM device /dev/hdc into partition device
+/dev/hda2, using the installation configuration file:
+
+<p>
+<pre>
+	ttylinux-installer --config=install.conf /dev/hda2
+</pre>
+
+<p>
+<b>Using a Virtual Context Script</b>
+
+<p>
+The ttylinux installer script supports a Virtual Context Script option in which
+the installed system is locked-down and boots with a startup sequence that
+mounts an iso9660 (CD-ROM) file system and runs a contextualization script from
+that file system. This is for running the installed ttylinux system in a
+virtual environment that may be prone to unauthorized log-in attempts.
+
+<p>
+The <tt>-vcs=&lt;name&gt;</tt> option names the Virtual Context Script to be invoked at
+boot startup each time the installed system boots. The named Virtual Context
+Script is inkvoked from an iso9660 file system that is mounted at boot startup;
+the block device for this file system must be available as /dev/hda, /dev/hdc,
+/dev/sr0, or /dev/cdrom.
+
+<p>
+When the <tt>-vcs=&lt;name&gt;</tt> option is used, the installed system is locked down
+by:
+<br>
+1. the user account is removed
+<br>
+2. the getty logins are all disabled
+<br>
+3. dropbear (sshd) is configured to run with passwords disabled
+<br>
+4. the firewall is enabled allowing only the SSH port
+<br>
+5. the Virtual Context Script is configured to be invoked at startup
+<br>
+6. the startup is configured to create a random root password
+
+<p>
+It is expected that the Virtual Context Script, which is invoked each time the
+installed system boots, puts an ssh-compliant public key into the
+/root/.ssh/authorized_keys file. This allows root login via SSH by someone
+with the corresponding SSH-compliant private key. See section <a href="node32.html#dropbear">4.5</a>
+for some more information on dropbear and public/private key usage.
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html341"
+  href="node25.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html339"
+  href="node20.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html333"
+  href="node23.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html342"
+  href="node25.html">3.4.5 Manual Installation -</a>
+<b> Up:</b> <a name="tex2html340"
+  href="node20.html">3.4 Install from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html334"
+  href="node23.html">3.4.3 Boot Loader Location</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

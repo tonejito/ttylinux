@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>4.10.1 Using pacman with ttylinux</title>
+<meta name="description" content="4.10.1 using pacman with ttylinux">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node39.html">
+<link rel="previous" href="node37.html">
+<link rel="up" href="node37.html">
+<link rel="next" href="node39.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html496"
+  href="node39.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html494"
+  href="node37.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html488"
+  href="node37.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html497"
+  href="node39.html">4.10.2 Using pacman on</a>
+<b> Up:</b> <a name="tex2html495"
+  href="node37.html">4.10 Package Management</a>
+<b> Previous:</b> <a name="tex2html489"
+  href="node37.html">4.10 Package Management</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h3><a name="SECTION000510100000000000000">
+<span class="arabic">4</span>.<span class="arabic">10</span>.<span class="arabic">1</span> Using pacman with ttylinux</a>
+</h3>
+
+<p>
+<b>Package Download</b>
+
+<p>
+Examples
+<pre>
+	pacman --download bash-3.2.48-x86_64.tbz lilo-22.8.src-x86_86.tbz
+	pacman -d bash-3.2.48-x86_64.tbz --repo=ttylinux.org
+	pacman -d bash-3.2.48-x86_64.tbz lilo-22.8.src-x86_86.tbz --vers=9.1
+	pacman --repo=palooka.net --download --vers=9.1 bash-3.2.48-x86_64.tbz
+</pre>
+
+<p>
+Use the <tt>-d</tt> or <tt>-download</tt> option to download a package from a
+repository via the network. The package name given to the command is the actual
+name of the package file. Multiple package names can be used to download
+multiple packages.
+
+<p>
+If no repository is given with the <tt>-repo=</tt> option, then all known
+repositories are searched. If the <tt>-repo=</tt> option is used, then only the
+given repository is search. The first package found matching the given package
+name is downloaded if there is a ttylinux version match, and then the download
+command stops; there is no further package search after a download attempt.
+
+<p>
+The version of the running ttylinux from which the download command is given
+must match the ttylinux version for a matching package name, otherwise the
+package is skipped and the download command continues searching the repository.
+Matching package names are displayed with their ttylinux version.
+
+<p>
+The <tt>-vers=</tt> option is used to override the running ttylinux version. For
+example, with this option you can download a package generated for ttylinux-9.1
+while running ttylinux-9.3, which in many cases is a valid option; furthermore,
+this option must be used with pacman when running pacman from a non-ttylinux
+host. See section <a href="node39.html#foreignpacman">4.10.2</a> for using pacman on a non-ttylinux host.
+
+<p>
+<b>Package Erase</b>
+
+<p>
+Examples
+<pre>
+	pacman --erase e2fsprogs-1.41.3
+	pacman -e e2fsprogs-1.41.3 bash-3.2.48
+</pre>
+
+<p>
+Use the <tt>-e</tt> or <tt>-erase</tt> option to remove an installed package's files
+and remove the package database file. The <i>name</i> is the name of the package
+as shown by the pacman query operations; this is not the name of the actual
+binary package file.  Multiple package names can be used to remove multiple
+packages.
+
+<p>
+<tt>pacman</tt> will show the package name ask to continue to remove the given
+package, and it will always list all the removed files.
+
+<p>
+Use the <tt>-v</tt> or <tt>-verbose</tt> option to get verbose output during package
+removal.
+
+<p>
+<b>Package Install</b>
+
+<p>
+Examples
+<pre>
+	pacman -i packages/bash-3.2.48-i486.tbz
+	pacman -i bash-3.2.48-i486.tbz e2fsprogs-1.41.3-i486.tbz
+	pacman --install --repo=ttylinux.net bash-3.2.48-i486.tbz
+	pacman --repo=ttylinux.net --install --vers=9.1 bash-3.2.48-i486.tbz
+</pre>
+
+<p>
+Use the <tt>-i</tt> or <tt>-install</tt> option to install a package by giving the
+package file name. The package name can be a pathname; the actual package file
+must be as named in the pacman command unless the <tt>-repo=</tt> option is used.
+Multiple package names can be used to install multiple packages.
+
+<p>
+To install from a repository use the <tt>-repo=</tt> option to give the hostname
+of the ttylinux package repository. Matching package names are displayed with
+their ttylinux version, but if the package's ttylinux version does not match
+the running ttylinux then the package is not installed. For the package
+installation command, the <tt>-vers=</tt> option is used only with the
+<tt>-repo=</tt> option to override the running ttylinux version.  For example,
+with this option you can install a package generated for ttylinux-9.1 while
+running ttylinux-9.3, which in many cases is a valid option.
+
+<p>
+<b>Package Make</b>
+
+<p>
+Examples
+<pre>
+	pacman -m dropbear-0.52-i486.tbz
+	pacman -make bash-3.2.48-i486.tbz e2fsprogs-1.41.3-i486.tbz
+</pre>
+
+<p>
+Use the <tt>-m</tt> or <tt>-make</tt> option to make ttylinux packages. This is a
+very difficult command to use. This command can be used on ttylinux but it is
+intended to be used on a non-ttylinux host to assemble ttylinux packages.
+
+<p>
+This command looks for a package database file. The database file name is the
+package name without the CPU architecture and <tt>.tbz</tt> suffix. For the
+dropbear example above, the database file name will be
+<tt>pkg-dropbear-0.52-FILES</tt> and that database file must be in the
+<tt>/usr/share/ttylinux</tt> directory.
+
+<p>
+Use the <tt>-v</tt> or <tt>-verbose</tt> option to get verbose output during package
+making.
+
+<p>
+See section <a href="node39.html#foreignpacman">4.10.2</a> for using pacman on a non-ttylinux host to make
+ttylinux packages.
+
+<p>
+<b>Query All</b> <i>List the Installed Packages</i>
+
+<p>
+Examples
+<pre>
+	pacman -qa
+	pacman --query-all
+</pre>
+
+<p>
+Use the <tt>-qa</tt> or <tt>-query-all</tt> option to see the list of all installed
+packages. This command shows the general package names, not the actual binary
+package file names. The package names shown by this command are the package
+names to use with the <tt>pacman</tt> erase command.
+
+<p>
+<b>Query File</b> <i>Show the Package to which a File Belongs</i>
+
+<p>
+Examples
+<pre>
+	pacman -qf /bin/login
+	pacman --query-file /bin/ls /usr/bin/pacman
+</pre>
+
+<p>
+Use the <tt>-qf</tt> or <tt>-query-file</tt> option to find out which package a
+file belongs to. If the given file name does not actually exists on the system
+there will be no output from <tt>pacman</tt>. If the given file name is not in
+an installed package, then there will be no output from <tt>pacman</tt>.
+
+<p>
+<b>Query List</b> <i>List the Files of an Installed Package</i>
+
+<p>
+Examples
+<pre>
+	pacman -ql e2fsprogs-1.41.3
+	pacman --query-list e2fsprogs-1.41.3 bash-3.2.48
+</pre>
+
+<p>
+Use the <tt>-ql</tt> or <tt>-query-list</tt> option to list all files in the given
+package.
+
+<p>
+<b>Query Repository</b>
+
+<p>
+Examples
+<pre>
+	pacman -qr
+	pacman --query-repo calc e2fsprogs-1.41.3-i486.tbz
+	pacman -qr --repo=waldo.net
+</pre>
+
+<p>
+Use the <tt>-qr</tt> or <tt>-query-repo</tt> option to list packages in an external
+ttylinux package repository.
+
+<p>
+When the <tt>-repo=</tt> option is used, then only that repository is used;
+otherwise the <tt>ttylinux.net</tt> repository <i>and</i> all the repositories
+named in the <tt>/etc/ttylinux-repo</tt> file are used.
+
+<p>
+The package name is the actual name of the binary package file; this is the
+same package name to use when installing a package.
+
+<p>
+When no package name is given all packages in the appropriate repositories are
+listed. This can be bothersome when looking for a particular package, as the
+name of the package may scroll way off the screen as the repository is listed.
+Use the name of a package, or a partial name, with this command to limit the
+output to the package of interest. The package names given with this command
+can be shortened; the partial name must be from the beginning of the package
+name, with no gaps or wildcards. For example, a repository query for package
+name <tt>calc</tt> will find and list only the binary package files beginning with
+<tt>calc</tt>, listing the actual package names such as
+<tt>calc-2.12.4.0-i486.tbz</tt> and <tt>calc-2.12.4.0-x86_64.tbz</tt>. All
+appropriate repositories will be search in this manner.
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html496"
+  href="node39.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html494"
+  href="node37.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html488"
+  href="node37.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html497"
+  href="node39.html">4.10.2 Using pacman on</a>
+<b> Up:</b> <a name="tex2html495"
+  href="node37.html">4.10 Package Management</a>
+<b> Previous:</b> <a name="tex2html489"
+  href="node37.html">4.10 Package Management</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>

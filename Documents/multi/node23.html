@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>3.4.3 Boot Loader Location</title>
+<meta name="description" content="3.4.3 boot Loader Location">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node24.html">
+<link rel="previous" href="node22.html">
+<link rel="up" href="node20.html">
+<link rel="next" href="node24.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html331"
+  href="node24.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html329"
+  href="node20.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html323"
+  href="node22.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html332"
+  href="node24.html">3.4.4 Running the Installer</a>
+<b> Up:</b> <a name="tex2html330"
+  href="node20.html">3.4 Install from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html324"
+  href="node22.html">3.4.2 Target Partition Device</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h3><a name="SECTION00044300000000000000">
+<span class="arabic">3</span>.<span class="arabic">4</span>.<span class="arabic">3</span> Boot Loader Location</a>
+</h3>
+
+<p>
+The LILO boot loader is installed in one of two places: either the Master Boot
+Record (MBR) of the <i>disk device</i> or the boot sector of the <i>partition
+device</i> in which ttylinux is being installed.
+
+<p>
+With LILO installed in the MBR of the first disk, it will completely take over
+the entire boot process of the computer. If there are other operating systems
+installed on the computer they need to be specified in the LILO configuration
+file, <tt>/etc/lilo.conf</tt>, in order to boot them.
+
+<p>
+With LILO installed in the boot sector of the target partition or in the MBR of
+a disk other than the first one in your computer, the bootloader installed in
+the MBR of the first disk needs to be configured to boot the ttylinux target
+partition.
+
+<p>
+<br><hr>
+
+</body>
+</html>

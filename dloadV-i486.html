@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- $RCSfile: dloadV-i486.html,v $ -->
+<!-- $Revision: 1.2 $ -->
+<!-- $Date: 2013/05/28 00:26:33 $ -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="ttylinux"/>
+<meta name="keywords" content="linux embedded small tiny console"/>
+<title>ttylinux homepage</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+<div class="mainpages">
+
+<div class="leftpages">
+   <span class="pagetitle">ttylinux downloads<small> - Virtio i486</small></span><br/>
+   <img src="Images/bluedot.png" width="470" height="1">
+   <p class="description">
+
+   The current <tt><b>ttylinux</b></tt> release is 16.1 for the Virtio i486
+   platform. The CD-ROM ISO image is available here. The updated ChangeLog
+   file is available:<br/>
+   &#8658; <a class="link" href="Documents/ChangeLog-virtio_i486.txt">ChangeLog-virtio_i486</a><br/>
+   <br/>
+
+   This <tt><b>ttylinux</b></tt> variant has an 8 MB RAM disk root file system
+   and needs at least 28 MB of RAM to run.<br/>
+   <br/>
+
+   The expected use for this ISO is to boot it in a Virtual Machine and install
+   onto a virtual disk.  The ttylinux-installer program should be used to
+   install the virtio <tt><b>ttylinux</b></tt> onto a virtual disk.  The root
+   directory has an installation config file; <u>it should be carefully and
+   completely read</u> then edited for your use, and then used to install from
+   the CDROM onto the virtual disk:<br/>
+   <tt>$ ttylinux-installer --config=install.conf /dev/sr0</tt><br/>
+   <br/>
+
+   <b><font color="#559">Source Code Component Links</font></b><br/>
+   This is a list of all the Virtio i486 <tt><b>ttylinux</b></tt> source code
+   components and links to their source distributions.<br/>
+   &#187; <a style="color:#07F" href="http://ftp.gnu.org/gnu/bash/">                           bash-4.2</a><br/>
+   &#187; <a style="color:#07F" href="http://www.busybox.net/downloads/">                      busybox-1.21.0</a><br/>
+   &#187; <a style="color:#07F" href="http://matt.ucc.asn.au/dropbear/releases/">              dropbear-2013.58</a><br/>
+   &#187; <a style="color:#07F" href="http://sourceforge.net/projects/e2fsprogs/files/">       e2fsprogs-1.42.7</a><br/>
+   &#187; <a style="color:#07F" href="http://ftp.gnu.org/gnu/glibc/">                          glibc-2.9</a><br/>
+   &#187; <a style="color:#07F" href="ftp://ftp.netfilter.org/pub/iptables/">                  iptables-1.4.18</a><br/>
+   &#187; <a style="color:#07F" href="http://lilo.alioth.debian.org/ftp/sources/">             lilio-23.2</a><br/>
+   &#187; <a style="color:#07F" href="http://ftp.kernel.org/pub/linux/kernel/v2.6/">           linux-2.6.34.7</a><br/>
+   &#187; <a style="color:#07F" href="http://ftp.gnu.org/gnu/ncurses/">                        ncurses-5.9</a><br/>
+   &#187; <a style="color:#07F" href="http://sourceforge.net/projects/retawq/files/">          retawq-0.2.6c</a><br/>
+   &#187; <a style="color:#07F" href="http://www.kernel.org/pub/linux/utils/boot/syslinux/">   syslinux-4.05</a><br/>
+   &#187; <a style="color:#07F" href="http://www.acme.com/software/thttpd/">                   thttpd-2.25b</a><br/>
+
+<table class="filelist" align="left" width="500" cellpadding="5" cellspacing="0">
+<b><font color="#559">Binary Distribution and Source ISO</font></b>
+   <br/><br/>
+   The CD-ROM ISO image file is the <tt><b>ttylinux</b></tt> release format; it
+   is directly bootable after burning it onto a suitable blank disc.  The ISO
+   image has all the available ttylinux documentation, kernel symbols and symbol
+   map file, and the individual <tt><b>ttylinux</b></tt> binary packages.
+   <br/><br/>
+   <b>NOTE</b> The source ISO only has the same source packages available at
+   the above links.  It is <b>NOT</b> used by <tt><b>ttylinux</b></tt>, has no
+   build or configuration scripts, and you very probably do not need it.  It is
+   here for GPL compliance.
+   <br/><br/>
+<tbody>
+<tr>
+<th class="gray">Filename</th>
+<th class="gray">MB</th>
+<th class="gray">md5sum</th>
+</tr>
+<tr>
+<td class="frame"><a class="link" href="Download/ttylinux-virtio_i486-16.1.iso.gz">ttylinux-virtio_i486-16.1.iso.gz</a></td>
+<td class="frame">11</td>
+<td class="frame"><tt>3b85eea192d4f79af5f9e8cf97cb9abe</tt></td>
+</tr>
+<tr>
+<td class="frame"><a class="link" href="Download/ttylinux-virtio_i486-16.1-src.iso.gz">ttylinux-virtio_i486-16.1-src.iso.gz</a></td>
+<td class="frame">105</td>
+<td class="frame"><tt>5a6030b206077fec08c0cdb8bd756e0e</tt></td>
+</tr>
+</tbody>
+</table>
+
+   </p>
+</div>  <!-- left stop -->
+
+<div class="rightpages">
+   <span class="black"><tt><b><i>help</i></b></tt></span><br/><br/>
+   <a style="color:#559" href="http://groups.google.com/group/ttylinux/"
+      title="groupe de nombre stupidement grand">ttylinux google group</a><br/>
+   <a style="color:#f33" href="help.html"
+      title="comment obtenir l'aide">how to get help</a><br/>
+   <br/><br/>
+   <span class="black"><tt><b><i>general information</i></b></tt></span><br/><br/>
+   <a href="index.html"          title="ici">Home</a><br/>
+   <a href="news.html"           title="nouvelles">News</a><br/>
+   <br/>
+   <a href="about.html"          title="au sujet de">About ttylinux</a><br/>
+   <a href="reqs.html"           title="conditions et dispositifs">Requirements and Features</a><br/>
+   <a href="credits.html"        title="crédits">Supporters, Users and Credits</a><br/>
+   <br/><br/>
+   <span class="black"><tt><b><i>miscellaneous downloads</i></b></tt></span><br/><br/>
+   <a href="docs.html"           title="documents">Documents</a><br/>
+   <a href="buildsys.html"       title="système de construction">Build System</a><br/>
+   <a href="addons.html"         title="adjonctions">Add-ons</a><br/>
+   <br/><br/>
+   <span class="black"><tt><b><i>ttylinux distributions</i></b></tt></span><br/><br/>
+   <a href="dloadBBN.html"       title="téléchargements BeagleBone">BeagleBone</a><br/>
+   <a href="dloadWRT.html"       title="téléchargements WRTU54G-TM">WRTU54G-TM</a><br/>
+   <a href="dloadMac.html"       title="téléchargements MAC">Macintosh G4</a><br/>
+   <a href="dloadPC-i486.html"   title="téléchargements PC-i486">PC i486</a><br/>
+   <a href="dloadPC-i686.html"   title="téléchargements PC-i686">PC i686</a><br/>
+   <a href="dloadPC-x86_64.html" title="téléchargements PC-x86_64">PC x86_64</a><br/>
+   <a href="dloadV-i486.html"    title="téléchargements Virtio-i486">Virtio i486</a><br/>
+   <a href="dloadV-i686.html"    title="téléchargements Virtio-i686">Virtio i686</a><br/>
+   <a href="dloadV-x86_64.html"  title="téléchargements Virtio-x86_64">Virtio x86_64</a><br/>
+</div> <!-- right stop -->
+
+</div> <!-- main stop -->
+
+</body>
+
+</html>

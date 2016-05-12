@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<html>
+<head>
+<title>3.3.3 Running the Transfer Script</title>
+<meta name="description" content="3.3.3 running the transfer Script">
+<meta name="keywords" content="User_Guide">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<meta name="Generator" content="LaTeX2HTML v2008">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="STYLESHEET" href="User_Guide.css">
+
+<link rel="next" href="node18.html">
+<link rel="previous" href="node16.html">
+<link rel="up" href="node14.html">
+<link rel="next" href="node18.html">
+</head>
+
+<body >
+
+<div class="navigation"><!--Navigation Panel-->
+<a name="tex2html269"
+  href="node18.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html267"
+  href="node14.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html261"
+  href="node16.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html270"
+  href="node18.html">3.3.4 Manual Transfer</a>
+<b> Up:</b> <a name="tex2html268"
+  href="node14.html">3.3 Transfer from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html262"
+  href="node16.html">3.3.2 Target Directory</a>
+<br>
+<br></div>
+<!--End of Navigation Panel-->
+
+<h3><a name="SECTION00043300000000000000">
+<span class="arabic">3</span>.<span class="arabic">3</span>.<span class="arabic">3</span> Running the Transfer Script</a>
+</h3>
+
+<p>
+The ttylinux shell script, <tt>/sbin/ttylinux-flash</tt> automates the process of
+copying the ttylinux system from the source directory into the target directory
+and making the target drive bootable. This transfer typically is from CD-ROM
+disc to flash drive; the CD-ROM disc should be mounted with option <tt>-t
+iso9660</tt> to specify the correct file system type, and USB drives are usually
+FAT32 and those should be mounted with option <tt>-t vfat</tt> to specify the
+correct file system type.
+
+<p>
+The script is invoked with a command line option telling it which boot loader
+to use, lilo or syslinux. The following is the help output from the
+<tt>ttylinux-flash</tt> script, it describes how to invoke the script.
+
+<p>
+<pre>
+ttylinux-flash
+(C) 2008-2010 Douglas Jerome &lt;douglas@ttylinux.org&gt;
+
+Usage: ttylinux-flash --lilo     &lt;source path&gt; &lt;flash path&gt; &lt;flash dev&gt;
+       ttylinux-flash --syslinux &lt;source path&gt; &lt;flash path&gt; &lt;flash dev&gt;
+
+Parameters:
+
+     -l | --lilo ....... Use lilo method to make bootable flash disk.
+     -s | --syslinux ... Use syslinux method to make bootable flash disk.
+
+     &lt;source path&gt; is the mounted ttylinux CD-ROM directory, or any equivalent
+                   USB or hard drive directory of the ttylinux CD-ROM layout
+                   and contents.
+
+     &lt;flash path&gt;  is a rooted path to the flash disk root file system to be
+                   loaded from the source path.  For the syslinux method this
+                   must be a Windows FAT file system, but for the lilo method
+                   this can be either an EXT2 or FAT file system.
+
+     &lt;flash dev&gt;   is the /dev/* that is the whole disk block device node,
+                   such as /dev/sdc, NOT a partition block device node
+                   like /dev/sdc1.
+</pre>
+
+<p>
+The transfer script checks if the source CR-ROM device contains a ttylinux
+CD-ROM; if the CD-ROM is found then a summary of what is to be transfered onto
+which device is printed and you are given a choice of continuing or aborting.
+Enter "yes" to continue the transfer.
+
+<p>
+The transfer script copies the ttylinux files onto drive and then installs the
+bootloader.
+
+<p>
+After the installer is finished you can remove the CD-ROM disc from your
+computer and reboot.
+
+<p>
+
+<div class="navigation"><hr>
+<!--Navigation Panel-->
+<a name="tex2html269"
+  href="node18.html">
+<img width="37" height="24" align="BOTTOM" border="0" alt="next" src="next.png"></a> 
+<a name="tex2html267"
+  href="node14.html">
+<img width="26" height="24" align="BOTTOM" border="0" alt="up" src="up.png"></a> 
+<a name="tex2html261"
+  href="node16.html">
+<img width="63" height="24" align="BOTTOM" border="0" alt="previous" src="prev.png"></a>   
+<br>
+<b> Next:</b> <a name="tex2html270"
+  href="node18.html">3.3.4 Manual Transfer</a>
+<b> Up:</b> <a name="tex2html268"
+  href="node14.html">3.3 Transfer from CD-ROM</a>
+<b> Previous:</b> <a name="tex2html262"
+  href="node16.html">3.3.2 Target Directory</a></div>
+<!--End of Navigation Panel-->
+
+</body>
+</html>
